@@ -1,8 +1,8 @@
 {
 	"SourceFiles": [
-		"C:\\prog_perso\\C++\\Projet\\ProjetUnreal\\Source\\ProjetUnreal\\ProjetUnreal.Build.cs",
-		"C:\\prog_perso\\C++\\Projet\\ProjetUnreal\\Source\\ProjetUnreal.Target.cs",
-		"C:\\prog_perso\\C++\\Projet\\ProjetUnreal\\Source\\ProjetUnrealEditor.Target.cs"
+		"C:\\prog_perso\\C++\\Projet\\PremierJeuUnreal\\ProjetUnreal\\Source\\ProjetUnreal\\ProjetUnreal.Build.cs",
+		"C:\\prog_perso\\C++\\Projet\\PremierJeuUnreal\\ProjetUnreal\\Source\\ProjetUnreal.Target.cs",
+		"C:\\prog_perso\\C++\\Projet\\PremierJeuUnreal\\ProjetUnreal\\Source\\ProjetUnrealEditor.Target.cs"
 	],
 	"EngineVersion": "5.6.1"
 }

@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\prog_perso\\C++\\Projet\\ProjetUnreal\\Intermediate\\Build\\BuildRulesProjects\\ProjetUnrealModuleRules\\ProjetUnrealModuleRules.csproj": {}
+    "C:\\prog_perso\\C++\\Projet\\PremierJeuUnreal\\ProjetUnreal\\Intermediate\\Build\\BuildRulesProjects\\ProjetUnrealModuleRules\\ProjetUnrealModuleRules.csproj": {}
   },
   "projects": {
     "C:\\Program Files\\Epic Games\\UE_5.6\\Engine\\Intermediate\\Build\\BuildRulesProjects\\MarketplaceRules\\MarketplaceRules.csproj": {
@@ -1242,14 +1242,14 @@
         }
       }
     },
-    "C:\\prog_perso\\C++\\Projet\\ProjetUnreal\\Intermediate\\Build\\BuildRulesProjects\\ProjetUnrealModuleRules\\ProjetUnrealModuleRules.csproj": {
+    "C:\\prog_perso\\C++\\Projet\\PremierJeuUnreal\\ProjetUnreal\\Intermediate\\Build\\BuildRulesProjects\\ProjetUnrealModuleRules\\ProjetUnrealModuleRules.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\prog_perso\\C++\\Projet\\ProjetUnreal\\Intermediate\\Build\\BuildRulesProjects\\ProjetUnrealModuleRules\\ProjetUnrealModuleRules.csproj",
+        "projectUniqueName": "C:\\prog_perso\\C++\\Projet\\PremierJeuUnreal\\ProjetUnreal\\Intermediate\\Build\\BuildRulesProjects\\ProjetUnrealModuleRules\\ProjetUnrealModuleRules.csproj",
         "projectName": "ProjetUnrealModuleRules",
-        "projectPath": "C:\\prog_perso\\C++\\Projet\\ProjetUnreal\\Intermediate\\Build\\BuildRulesProjects\\ProjetUnrealModuleRules\\ProjetUnrealModuleRules.csproj",
+        "projectPath": "C:\\prog_perso\\C++\\Projet\\PremierJeuUnreal\\ProjetUnreal\\Intermediate\\Build\\BuildRulesProjects\\ProjetUnrealModuleRules\\ProjetUnrealModuleRules.csproj",
         "packagesPath": "C:\\Users\\loulo\\.nuget\\packages\\",
-        "outputPath": "C:\\prog_perso\\C++\\Projet\\ProjetUnreal\\Intermediate\\Build\\BuildRulesProjects\\ProjetUnrealModuleRules\\obj\\",
+        "outputPath": "C:\\prog_perso\\C++\\Projet\\PremierJeuUnreal\\ProjetUnreal\\Intermediate\\Build\\BuildRulesProjects\\ProjetUnrealModuleRules\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
