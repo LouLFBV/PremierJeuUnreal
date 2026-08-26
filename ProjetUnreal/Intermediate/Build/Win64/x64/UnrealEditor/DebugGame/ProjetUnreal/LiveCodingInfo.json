@@ -1,0 +1,9 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.ProjetUnreal.gen.cpp.obj": [
+			"MainMenuWidget.gen.cpp.obj",
+			"ProjetUnreal.init.gen.cpp.obj"
+		]
+	}
+}
