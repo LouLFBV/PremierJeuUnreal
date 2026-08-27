@@ -7,23 +7,27 @@
 #include "UObject/GeneratedCppIncludes.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeProjetUnreal_init() {}
+	PROJETUNREAL_API UFunction* Z_Construct_UDelegateFunction_ProjetUnreal_OnCoinsChanged__DelegateSignature();
 	static FPackageRegistrationInfo Z_Registration_Info_UPackage__Script_ProjetUnreal;
 	FORCENOINLINE UPackage* Z_Construct_UPackage__Script_ProjetUnreal()
 	{
 		if (!Z_Registration_Info_UPackage__Script_ProjetUnreal.OuterSingleton)
 		{
+			static UObject* (*const SingletonFuncArray[])() = {
+				(UObject* (*)())Z_Construct_UDelegateFunction_ProjetUnreal_OnCoinsChanged__DelegateSignature,
+			};
 			static const UECodeGen_Private::FPackageParams PackageParams = {
 				"/Script/ProjetUnreal",
-				nullptr,
-				0,
+				SingletonFuncArray,
+				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0x67673977,
-				0x1CC6AD2C,
+				0x0C0C2E0E,
+				0x24F3A606,
 				METADATA_PARAMS(0, nullptr)
 			};
 			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_ProjetUnreal.OuterSingleton, PackageParams);
 		}
 		return Z_Registration_Info_UPackage__Script_ProjetUnreal.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_ProjetUnreal(Z_Construct_UPackage__Script_ProjetUnreal, TEXT("/Script/ProjetUnreal"), Z_Registration_Info_UPackage__Script_ProjetUnreal, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x67673977, 0x1CC6AD2C));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_ProjetUnreal(Z_Construct_UPackage__Script_ProjetUnreal, TEXT("/Script/ProjetUnreal"), Z_Registration_Info_UPackage__Script_ProjetUnreal, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x0C0C2E0E, 0x24F3A606));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -2,10 +2,13 @@
 	"RemapUnityFiles": 
 	{
 		"Module.ProjetUnreal.gen.cpp.obj": [
+			"MainCharacter.gen.cpp.obj",
 			"MainMenuWidget.gen.cpp.obj",
-			"PlayerStateMachineComponent.gen.cpp.obj",
 			"PlayerStateBase.gen.cpp.obj",
-			"ProjetUnreal.init.gen.cpp.obj"
+			"PlayerStateMachineComponent.gen.cpp.obj",
+			"CoinItem.gen.cpp.obj",
+			"ProjetUnreal.init.gen.cpp.obj",
+			"WalletComponent.gen.cpp.obj"
 		]
 	}
 }

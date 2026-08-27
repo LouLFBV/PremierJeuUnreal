@@ -42,6 +42,9 @@
     <Filter Include="Source\ProjetUnreal\Private">
       <UniqueIdentifier>{1BB51809-C86F-3A46-AA1B-2A1699573D65}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\ProjetUnreal\Private\CoinItem.cpp">
+      <Filter>Source\ProjetUnreal\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\ProjetUnreal\Private\MainCharacter.cpp">
       <Filter>Source\ProjetUnreal\Private</Filter>
     </ClCompile>
@@ -54,9 +57,15 @@
     <ClCompile Include="..\..\Source\ProjetUnreal\Private\PlayerStateMachineComponent.cpp">
       <Filter>Source\ProjetUnreal\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\ProjetUnreal\Private\WalletComponent.cpp">
+      <Filter>Source\ProjetUnreal\Private</Filter>
+    </ClCompile>
     <Filter Include="Source\ProjetUnreal\Public">
       <UniqueIdentifier>{D7231647-3F48-3A2F-83DD-1ED7BA42F11F}</UniqueIdentifier>
     </Filter>
+    <ClInclude Include="..\..\Source\ProjetUnreal\Public\CoinItem.h">
+      <Filter>Source\ProjetUnreal\Public</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\MainCharacter.h">
       <Filter>Source\ProjetUnreal\Public</Filter>
     </ClInclude>
@@ -67,6 +76,9 @@
       <Filter>Source\ProjetUnreal\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\PlayerStateMachineComponent.h">
+      <Filter>Source\ProjetUnreal\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\ProjetUnreal\Public\WalletComponent.h">
       <Filter>Source\ProjetUnreal\Public</Filter>
     </ClInclude>
   </ItemGroup>

@@ -32,6 +32,9 @@ AMainCharacter::AMainCharacter()
 
 	// 4. State Machine
 	StateMachineComponent = CreateDefaultSubobject<UPlayerStateMachineComponent>(TEXT("StateMachineComponent"));
+
+	// 5. Création du composant Wallet
+	WalletComponent = CreateDefaultSubobject<UWalletComponent>(TEXT("WalletComponent"));
 }
 
 void AMainCharacter::BeginPlay()
