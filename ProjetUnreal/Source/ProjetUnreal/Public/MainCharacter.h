@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "InputActionValue.h"
+#include "Blueprint/UserWidget.h"
 #include "MainCharacter.generated.h"
 
 class USpringArmComponent;
@@ -27,6 +28,18 @@ protected:
 	/** Callbacks pour les entrées joueur */
 	void Move(const FInputActionValue& Value);
 	void Look(const FInputActionValue& Value);
+
+	// Classe du Widget de pause à assigner dans le Blueprint
+	UPROPERTY(EditDefaultsOnly, Category = "UI")
+	TSubclassOf<UUserWidget> PauseMenuClass;
+
+	// Action Enhanced Input (ex: touche Echap ou P)
+	UPROPERTY(EditDefaultsOnly, Category = "Input")
+	class UInputAction* PauseAction;
+
+	// Fonction de bascule de la pause
+	UFUNCTION(BlueprintCallable, Category = "UI")
+	void TogglePause();
 
 private:
 	/** Bras de la caméra (SpringArm) */
@@ -53,6 +66,9 @@ private:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<UWalletComponent> WalletComponent;
+	
+	UPROPERTY()
+	UUserWidget* PauseMenuInstance;
 
 public:
 	FORCEINLINE USpringArmComponent* GetCameraBoom() const { return CameraBoom; }

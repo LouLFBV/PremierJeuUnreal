@@ -4,6 +4,9 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
+#include "WalletComponent.h"
+#include "Kismet/GameplayStatics.h"
+#include "Blueprint/UserWidget.h"
 #include "PlayerStateMachineComponent.h"
 
 AMainCharacter::AMainCharacter()
@@ -71,6 +74,11 @@ void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 		{
 			EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AMainCharacter::Look);
 		}
+
+		if (EnhancedInputComponent && PauseAction)
+		{
+			EnhancedInputComponent->BindAction(PauseAction, ETriggerEvent::Started, this, &AMainCharacter::TogglePause);
+		}
 	}
 }
 
@@ -103,5 +111,52 @@ void AMainCharacter::Look(const FInputActionValue& Value)
 		// Tourner la caméra avec la souris
 		AddControllerYawInput(LookAxisVector.X);
 		AddControllerPitchInput(LookAxisVector.Y);
+	}
+}
+
+void AMainCharacter::TogglePause()
+{
+	APlayerController* PC = Cast<APlayerController>(GetController());
+	if (!PC || !PauseMenuClass) return;
+
+	bool bIsPaused = UGameplayStatics::IsGamePaused(GetWorld());
+
+	if (!bIsPaused)
+	{
+		// 1. Mettre le jeu en pause
+		UGameplayStatics::SetGamePaused(GetWorld(), true);
+
+		// 2. Instancier le widget s'il n'existe pas encore
+		if (!PauseMenuInstance)
+		{
+			PauseMenuInstance = CreateWidget<UUserWidget>(PC, PauseMenuClass);
+		}
+
+		// 3. Afficher l'interface et libérer la souris
+		if (PauseMenuInstance)
+		{
+			PauseMenuInstance->AddToViewport();
+
+			FInputModeGameAndUI InputMode;
+			InputMode.SetWidgetToFocus(PauseMenuInstance->TakeWidget());
+			PC->SetInputMode(InputMode);
+			PC->bShowMouseCursor = true;
+		}
+	}
+	else
+	{
+		// 1. Retirer le widget du HUD
+		if (PauseMenuInstance)
+		{
+			PauseMenuInstance->RemoveFromParent();
+		}
+
+		// 2. Enlever la pause du jeu
+		UGameplayStatics::SetGamePaused(GetWorld(), false);
+
+		// 3. Verrouiller à nouveau la souris dans le jeu
+		FInputModeGameOnly InputMode;
+		PC->SetInputMode(InputMode);
+		PC->bShowMouseCursor = false;
 	}
 }

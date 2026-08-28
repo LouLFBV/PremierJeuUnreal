@@ -7,7 +7,8 @@
 			"MainMenuWidget.gen.cpp.obj",
 			"PlayerStateBase.gen.cpp.obj",
 			"PlayerStateMachineComponent.gen.cpp.obj",
-			"ProjetUnreal.init.gen.cpp.obj"
+			"ProjetUnreal.init.gen.cpp.obj",
+			"WalletComponent.gen.cpp.obj"
 		]
 	}
 }

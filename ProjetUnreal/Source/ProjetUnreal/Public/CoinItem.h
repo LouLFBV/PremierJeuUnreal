@@ -16,6 +16,8 @@ class PROJETUNREAL_API ACoinItem : public AActor
 public:
 	ACoinItem();
 
+	virtual void Tick(float DeltaTime) override;
+
 protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	TObjectPtr<USphereComponent> SphereCollision;
