@@ -28,6 +28,12 @@ protected:
 	/** Callbacks pour les entrées joueur */
 	void Move(const FInputActionValue& Value);
 	void Look(const FInputActionValue& Value);
+	virtual void Jump() override;
+	virtual void Landed(const FHitResult& Hit) override;
+
+	/** Action de Saut */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input", meta = (AllowPrivateAccess = "true"))
+	TObjectPtr<UInputAction> JumpAction;
 
 	// Classe du Widget de pause à assigner dans le Blueprint
 	UPROPERTY(EditDefaultsOnly, Category = "UI")

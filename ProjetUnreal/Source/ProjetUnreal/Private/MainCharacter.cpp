@@ -79,6 +79,15 @@ void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 		{
 			EnhancedInputComponent->BindAction(PauseAction, ETriggerEvent::Started, this, &AMainCharacter::TogglePause);
 		}
+
+		if (JumpAction)
+		{
+			// Quand on appuie sur Espace : lance le saut
+			EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Started, this, &ACharacter::Jump);
+
+			// Quand on relâche Espace : stoppe la poussée du saut (permet les sauts courts/longs)
+			EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Completed, this, &ACharacter::StopJumping);
+		}
 	}
 }
 
@@ -114,8 +123,36 @@ void AMainCharacter::Look(const FInputActionValue& Value)
 	}
 }
 
+void AMainCharacter::Jump()
+{
+	Super::Jump();
+
+	// Optionnel : avertir ta State Machine qu'on passe en état "Jumping" ou "InAir"
+	/*
+	if (StateMachineComponent)
+	{
+		StateMachineComponent->SetState(EPlayerState::Jumping);
+	}
+	*/
+}
+
+void AMainCharacter::Landed(const FHitResult& Hit)
+{
+	Super::Landed(Hit);
+
+	// Déclenché automatiquement quand le personnage touche le sol !
+	// Optionnel : remettre la State Machine en état "Grounded" ou "Locomotion"
+	/*
+	if (StateMachineComponent)
+	{
+		StateMachineComponent->SetState(EPlayerState::Grounded);
+	}
+	*/
+}
+
 void AMainCharacter::TogglePause()
 {
+
 	APlayerController* PC = Cast<APlayerController>(GetController());
 	if (!PC || !PauseMenuClass) return;
 
