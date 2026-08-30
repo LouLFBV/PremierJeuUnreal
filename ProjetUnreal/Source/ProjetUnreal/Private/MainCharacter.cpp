@@ -5,6 +5,8 @@
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "WalletComponent.h"
+#include "HealthComponent.h"
+#include "Weapon.h"
 #include "Kismet/GameplayStatics.h"
 #include "Blueprint/UserWidget.h"
 #include "PlayerStateMachineComponent.h"
@@ -36,8 +38,9 @@ AMainCharacter::AMainCharacter()
 	// 4. State Machine
 	StateMachineComponent = CreateDefaultSubobject<UPlayerStateMachineComponent>(TEXT("StateMachineComponent"));
 
-	// 5. Création du composant Wallet
+	// 5. Création du composant Wallet et Health
 	WalletComponent = CreateDefaultSubobject<UWalletComponent>(TEXT("WalletComponent"));
+	HealthComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("HealthComponent"));
 }
 
 void AMainCharacter::BeginPlay()
@@ -53,6 +56,24 @@ void AMainCharacter::BeginPlay()
 			{
 				Subsystem->AddMappingContext(DefaultMappingContext, 0);
 			}
+		}
+	}
+	if (WeaponClass)
+	{
+		FActorSpawnParameters SpawnParams;
+		SpawnParams.Owner = this;
+		SpawnParams.Instigator = GetInstigator();
+
+		EquippedWeapon = GetWorld()->SpawnActor<AWeapon>(WeaponClass, SpawnParams);
+
+		if (EquippedWeapon)
+		{
+			// Attache l'arme au socket du squelette de ton personnage (ex: "hand_r_socket")
+			EquippedWeapon->AttachToComponent(
+				GetMesh(),
+				FAttachmentTransformRules::SnapToTargetNotIncludingScale,
+				TEXT("hand_r_socket")
+			);
 		}
 	}
 }
@@ -73,6 +94,11 @@ void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 		if (LookAction)
 		{
 			EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AMainCharacter::Look);
+		}
+
+		if (AttackAction)
+		{
+			EnhancedInputComponent->BindAction(AttackAction, ETriggerEvent::Triggered, this, &AMainCharacter::Attack);
 		}
 
 		if (EnhancedInputComponent && PauseAction)
@@ -148,6 +174,15 @@ void AMainCharacter::Landed(const FHitResult& Hit)
 		StateMachineComponent->SetState(EPlayerState::Grounded);
 	}
 	*/
+}
+
+void AMainCharacter::Attack()
+{
+	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+	if (AnimInstance && AttackMontage)
+	{
+		AnimInstance->Montage_Play(AttackMontage);
+	}
 }
 
 void AMainCharacter::TogglePause()

@@ -6,12 +6,16 @@
 #include "Blueprint/UserWidget.h"
 #include "MainCharacter.generated.h"
 
+// 1. Ajouter la déclaration anticipée de la classe AWeapon
 class USpringArmComponent;
 class UCameraComponent;
 class UInputMappingContext;
 class UInputAction;
 class UPlayerStateMachineComponent;
 class UWalletComponent;
+class UHealthComponent;
+class AWeapon;
+class UAnimMontage;
 
 UCLASS()
 class PROJETUNREAL_API AMainCharacter : public ACharacter
@@ -28,6 +32,8 @@ protected:
 	/** Callbacks pour les entrées joueur */
 	void Move(const FInputActionValue& Value);
 	void Look(const FInputActionValue& Value);
+	void Attack();
+
 	virtual void Jump() override;
 	virtual void Landed(const FHitResult& Hit) override;
 
@@ -46,6 +52,17 @@ protected:
 	// Fonction de bascule de la pause
 	UFUNCTION(BlueprintCallable, Category = "UI")
 	void TogglePause();
+
+	// 2. Configuration de l'arme dans le panneau Details
+	UPROPERTY(EditDefaultsOnly, Category = "Combat")
+	TSubclassOf<AWeapon> WeaponClass;
+
+	// 3. Instance de l'arme tenue en jeu (Accessible depuis les Blueprints !)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Combat")
+	TObjectPtr<AWeapon> EquippedWeapon;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Combat")
+	TObjectPtr<UAnimMontage> AttackMontage;
 
 private:
 	/** Bras de la caméra (SpringArm) */
@@ -70,9 +87,15 @@ private:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input", meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<UInputAction> LookAction;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input", meta = (AllowPrivateAccess = "true"))
+	TObjectPtr<UInputAction> AttackAction;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<UWalletComponent> WalletComponent;
-	
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
+	TObjectPtr<UHealthComponent> HealthComponent;
+
 	UPROPERTY()
 	UUserWidget* PauseMenuInstance;
 
@@ -81,4 +104,7 @@ public:
 	FORCEINLINE UCameraComponent* GetFollowCamera() const { return FollowCamera; }
 	FORCEINLINE UPlayerStateMachineComponent* GetStateMachine() const { return StateMachineComponent; }
 	FORCEINLINE UWalletComponent* GetWalletComponent() const { return WalletComponent; }
+
+	// 4. Getter pour récupérer l'arme équipée facilement
+	FORCEINLINE AWeapon* GetEquippedWeapon() const { return EquippedWeapon; }
 };
