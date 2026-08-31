@@ -1,0 +1,35 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\prog_perso\\c++\\projet\\premierjeuunreal\\projetunreal\\source\\projetunreal\\private\\coinitem.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\prog_perso\\c++\\projet\\premierjeuunreal\\projetunreal\\intermediate\\build\\win64\\x64\\projetunrealeditor\\debuggame\\unrealed\\sharedpch.unrealed.project.nonoptimized.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\prog_perso\\c++\\projet\\premierjeuunreal\\projetunreal\\intermediate\\build\\win64\\x64\\unrealeditor\\debuggame\\projetunreal\\definitions.projetunreal.h",
+            "c:\\prog_perso\\c++\\projet\\premierjeuunreal\\projetunreal\\source\\projetunreal\\public\\coinitem.h",
+            "c:\\prog_perso\\c++\\projet\\premierjeuunreal\\projetunreal\\intermediate\\build\\win64\\unrealeditor\\inc\\projetunreal\\uht\\coinitem.generated.h",
+            "c:\\program files\\epic games\\ue_5.6\\engine\\source\\runtime\\engine\\classes\\components\\spherecomponent.h",
+            "c:\\program files\\epic games\\ue_5.6\\engine\\source\\runtime\\engine\\classes\\components\\shapecomponent.h",
+            "c:\\program files\\epic games\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\shapecomponent.generated.h",
+            "c:\\program files\\epic games\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\spherecomponent.generated.h",
+            "c:\\program files\\epic games\\ue_5.6\\engine\\plugins\\2d\\paper2d\\source\\paper2d\\classes\\paperflipbookcomponent.h",
+            "c:\\program files\\epic games\\ue_5.6\\engine\\plugins\\2d\\paper2d\\intermediate\\build\\win64\\unrealeditor\\inc\\paper2d\\uht\\paperflipbookcomponent.generated.h",
+            "c:\\prog_perso\\c++\\projet\\premierjeuunreal\\projetunreal\\source\\projetunreal\\public\\walletcomponent.h",
+            "c:\\prog_perso\\c++\\projet\\premierjeuunreal\\projetunreal\\intermediate\\build\\win64\\unrealeditor\\inc\\projetunreal\\uht\\walletcomponent.generated.h",
+            "c:\\program files\\epic games\\ue_5.6\\engine\\source\\runtime\\engine\\classes\\kismet\\gameplaystatics.h",
+            "c:\\program files\\epic games\\ue_5.6\\engine\\source\\runtime\\engine\\classes\\kismet\\kismetsystemlibrary.h",
+            "c:\\program files\\epic games\\ue_5.6\\engine\\source\\runtime\\coreuobject\\public\\uobject\\propertyaccessutil.h",
+            "c:\\program files\\epic games\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\kismetsystemlibrary.generated.h",
+            "c:\\program files\\epic games\\ue_5.6\\engine\\source\\runtime\\engine\\classes\\sound\\dialoguetypes.h",
+            "c:\\program files\\epic games\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\dialoguetypes.generated.h",
+            "c:\\program files\\epic games\\ue_5.6\\engine\\source\\runtime\\engine\\classes\\kismet\\gameplaystaticstypes.h",
+            "c:\\program files\\epic games\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gameplaystaticstypes.generated.h",
+            "c:\\program files\\epic games\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gameplaystatics.generated.h",
+            "c:\\program files\\epic games\\ue_5.6\\engine\\source\\runtime\\engine\\classes\\kismet\\kismetmathlibrary.h",
+            "c:\\program files\\epic games\\ue_5.6\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\kismetmathlibrary.generated.h",
+            "c:\\program files\\epic games\\ue_5.6\\engine\\source\\runtime\\engine\\classes\\kismet\\kismetmathlibrary.inl"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

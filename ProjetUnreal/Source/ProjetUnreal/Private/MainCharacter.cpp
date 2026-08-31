@@ -178,6 +178,12 @@ void AMainCharacter::Landed(const FHitResult& Hit)
 
 void AMainCharacter::Attack()
 {
+	// 1. Bloque l'exécution si une attaque est déjà en cours
+	if (bIsAttacking)
+	{
+		return;
+	}
+
 	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
 	if (AnimInstance && AttackMontage)
 	{

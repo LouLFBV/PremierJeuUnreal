@@ -107,4 +107,7 @@ public:
 
 	// 4. Getter pour récupérer l'arme équipée facilement
 	FORCEINLINE AWeapon* GetEquippedWeapon() const { return EquippedWeapon; }
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Combat")
+	bool bIsAttacking = false;
 };
