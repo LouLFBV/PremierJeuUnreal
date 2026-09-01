@@ -8,6 +8,9 @@ AEnemyBase::AEnemyBase()
 
 	// Attacher le HealthComponent à l'ennemi
 	HealthComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("HealthComponent"));
+
+	HealthWidgetComp = CreateDefaultSubobject<UWidgetComponent>(TEXT("HealthWidgetComp"));
+	HealthWidgetComp->SetupAttachment(GetRootComponent());
 }
 
 void AEnemyBase::BeginPlay()
