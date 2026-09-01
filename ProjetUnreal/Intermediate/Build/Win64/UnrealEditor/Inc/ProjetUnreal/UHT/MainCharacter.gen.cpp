@@ -29,6 +29,54 @@ UMG_API UClass* Z_Construct_UClass_UUserWidget_NoRegister();
 UPackage* Z_Construct_UPackage__Script_ProjetUnreal();
 // ********** End Cross Module References **********************************************************
 
+// ********** Begin Class AMainCharacter Function GetEquippedWeapon ********************************
+struct Z_Construct_UFunction_AMainCharacter_GetEquippedWeapon_Statics
+{
+	struct MainCharacter_eventGetEquippedWeapon_Parms
+	{
+		AWeapon* ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "Category", "Combat" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// 4. Getter pour r\xef\xbf\xbd""cup\xef\xbf\xbdrer l'arme \xef\xbf\xbdquip\xef\xbf\xbd""e facilement\n" },
+#endif
+		{ "ModuleRelativePath", "Public/MainCharacter.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "4. Getter pour r\xef\xbf\xbd""cup\xef\xbf\xbdrer l'arme \xef\xbf\xbdquip\xef\xbf\xbd""e facilement" },
+#endif
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AMainCharacter_GetEquippedWeapon_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(MainCharacter_eventGetEquippedWeapon_Parms, ReturnValue), Z_Construct_UClass_AWeapon_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMainCharacter_GetEquippedWeapon_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMainCharacter_GetEquippedWeapon_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_AMainCharacter_GetEquippedWeapon_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMainCharacter_GetEquippedWeapon_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_AMainCharacter, nullptr, "GetEquippedWeapon", Z_Construct_UFunction_AMainCharacter_GetEquippedWeapon_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMainCharacter_GetEquippedWeapon_Statics::PropPointers), sizeof(Z_Construct_UFunction_AMainCharacter_GetEquippedWeapon_Statics::MainCharacter_eventGetEquippedWeapon_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x54020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMainCharacter_GetEquippedWeapon_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMainCharacter_GetEquippedWeapon_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_AMainCharacter_GetEquippedWeapon_Statics::MainCharacter_eventGetEquippedWeapon_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_AMainCharacter_GetEquippedWeapon()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AMainCharacter_GetEquippedWeapon_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(AMainCharacter::execGetEquippedWeapon)
+{
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(AWeapon**)Z_Param__Result=P_THIS->GetEquippedWeapon();
+	P_NATIVE_END;
+}
+// ********** End Class AMainCharacter Function GetEquippedWeapon **********************************
+
 // ********** Begin Class AMainCharacter Function TogglePause **************************************
 struct Z_Construct_UFunction_AMainCharacter_TogglePause_Statics
 {
@@ -70,6 +118,7 @@ void AMainCharacter::StaticRegisterNativesAMainCharacter()
 {
 	UClass* Class = AMainCharacter::StaticClass();
 	static const FNameNativePtrPair Funcs[] = {
+		{ "GetEquippedWeapon", &AMainCharacter::execGetEquippedWeapon },
 		{ "TogglePause", &AMainCharacter::execTogglePause },
 	};
 	FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -270,6 +319,7 @@ struct Z_Construct_UClass_AMainCharacter_Statics
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
+		{ &Z_Construct_UFunction_AMainCharacter_GetEquippedWeapon, "GetEquippedWeapon" }, // 102702605
 		{ &Z_Construct_UFunction_AMainCharacter_TogglePause, "TogglePause" }, // 2397369169
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
@@ -355,10 +405,10 @@ AMainCharacter::~AMainCharacter() {}
 struct Z_CompiledInDeferFile_FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_MainCharacter_h__Script_ProjetUnreal_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMainCharacter, AMainCharacter::StaticClass, TEXT("AMainCharacter"), &Z_Registration_Info_UClass_AMainCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMainCharacter), 1213075792U) },
+		{ Z_Construct_UClass_AMainCharacter, AMainCharacter::StaticClass, TEXT("AMainCharacter"), &Z_Registration_Info_UClass_AMainCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMainCharacter), 2001033656U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_MainCharacter_h__Script_ProjetUnreal_1415548944(TEXT("/Script/ProjetUnreal"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_MainCharacter_h__Script_ProjetUnreal_3435644498(TEXT("/Script/ProjetUnreal"),
 	Z_CompiledInDeferFile_FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_MainCharacter_h__Script_ProjetUnreal_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_MainCharacter_h__Script_ProjetUnreal_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

@@ -16,8 +16,11 @@
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
+class AWeapon;
+
 // ********** Begin Class AMainCharacter ***********************************************************
 #define FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_MainCharacter_h_23_RPC_WRAPPERS_NO_PURE_DECLS \
+	DECLARE_FUNCTION(execGetEquippedWeapon); \
 	DECLARE_FUNCTION(execTogglePause);
 
 

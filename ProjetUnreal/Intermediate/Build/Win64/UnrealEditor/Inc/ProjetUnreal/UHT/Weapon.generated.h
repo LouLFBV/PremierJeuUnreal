@@ -22,7 +22,8 @@ struct FHitResult;
 
 // ********** Begin Class AWeapon ******************************************************************
 #define FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_Weapon_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
-	DECLARE_FUNCTION(execOnHitboxOverlap);
+	DECLARE_FUNCTION(execOnHitboxOverlap); \
+	DECLARE_FUNCTION(execToggleHitbox);
 
 
 PROJETUNREAL_API UClass* Z_Construct_UClass_AWeapon_NoRegister();

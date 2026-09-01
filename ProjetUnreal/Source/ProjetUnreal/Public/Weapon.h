@@ -16,6 +16,7 @@ public:
 	AWeapon();
 
 	/** Active/Désactive la collision et vide la liste des cibles touchées */
+	UFUNCTION(BlueprintCallable, Category = "Combat")
 	void ToggleHitbox(bool bEnable);
 
 protected:

@@ -106,7 +106,8 @@ public:
 	FORCEINLINE UWalletComponent* GetWalletComponent() const { return WalletComponent; }
 
 	// 4. Getter pour récupérer l'arme équipée facilement
-	FORCEINLINE AWeapon* GetEquippedWeapon() const { return EquippedWeapon; }
+	UFUNCTION(BlueprintCallable, Category = "Combat")
+	AWeapon* GetEquippedWeapon() const { return EquippedWeapon; }
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Combat")
 	bool bIsAttacking = false;

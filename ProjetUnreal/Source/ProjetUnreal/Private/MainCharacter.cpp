@@ -72,7 +72,7 @@ void AMainCharacter::BeginPlay()
 			EquippedWeapon->AttachToComponent(
 				GetMesh(),
 				FAttachmentTransformRules::SnapToTargetNotIncludingScale,
-				TEXT("hand_r_socket")
+				TEXT("sword_bottom")
 			);
 		}
 	}
@@ -184,6 +184,7 @@ void AMainCharacter::Attack()
 		return;
 	}
 
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Attack!"));
 	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
 	if (AnimInstance && AttackMontage)
 	{

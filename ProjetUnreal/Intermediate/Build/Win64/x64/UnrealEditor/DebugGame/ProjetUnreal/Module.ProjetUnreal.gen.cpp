@@ -6,6 +6,4 @@
 #include "C:/prog_perso/C++/Projet/PremierJeuUnreal/ProjetUnreal/Intermediate/Build/Win64/UnrealEditor/Inc/ProjetUnreal/UHT/MainMenuWidget.gen.cpp"
 #include "C:/prog_perso/C++/Projet/PremierJeuUnreal/ProjetUnreal/Intermediate/Build/Win64/UnrealEditor/Inc/ProjetUnreal/UHT/PlayerStateBase.gen.cpp"
 #include "C:/prog_perso/C++/Projet/PremierJeuUnreal/ProjetUnreal/Intermediate/Build/Win64/UnrealEditor/Inc/ProjetUnreal/UHT/PlayerStateMachineComponent.gen.cpp"
-#include "C:/prog_perso/C++/Projet/PremierJeuUnreal/ProjetUnreal/Intermediate/Build/Win64/UnrealEditor/Inc/ProjetUnreal/UHT/ProjetUnreal.init.gen.cpp"
 #include "C:/prog_perso/C++/Projet/PremierJeuUnreal/ProjetUnreal/Intermediate/Build/Win64/UnrealEditor/Inc/ProjetUnreal/UHT/WalletComponent.gen.cpp"
-#include "C:/prog_perso/C++/Projet/PremierJeuUnreal/ProjetUnreal/Intermediate/Build/Win64/UnrealEditor/Inc/ProjetUnreal/UHT/Weapon.gen.cpp"
