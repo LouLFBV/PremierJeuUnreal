@@ -153,6 +153,11 @@ void AMainCharacter::Jump()
 {
 	Super::Jump();
 
+	if (JumpSound)
+	{
+		UGameplayStatics::PlaySoundAtLocation(this, JumpSound, GetActorLocation());
+	}
+
 	// Optionnel : avertir ta State Machine qu'on passe en état "Jumping" ou "InAir"
 	/*
 	if (StateMachineComponent)
@@ -182,6 +187,12 @@ void AMainCharacter::Attack()
 	if (bIsAttacking)
 	{
 		return;
+	}
+
+	// 2. Jouer le son d'attaque
+	if (AttackSound)
+	{
+		UGameplayStatics::PlaySoundAtLocation(this, AttackSound, GetActorLocation());
 	}
 
 	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Attack!"));

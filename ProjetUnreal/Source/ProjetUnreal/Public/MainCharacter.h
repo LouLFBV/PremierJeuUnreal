@@ -16,6 +16,7 @@ class UWalletComponent;
 class UHealthComponent;
 class AWeapon;
 class UAnimMontage;
+class USoundBase;
 
 UCLASS()
 class PROJETUNREAL_API AMainCharacter : public ACharacter
@@ -63,6 +64,12 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, Category = "Combat")
 	TObjectPtr<UAnimMontage> AttackMontage;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Combat")
+	TObjectPtr<USoundBase> AttackSound;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Jump")
+	TObjectPtr<USoundBase> JumpSound;
 
 private:
 	/** Bras de la caméra (SpringArm) */
