@@ -1,1 +1,2 @@
-[0827/164614.064:ERROR:gpu_init.cc(426)] Passthrough is not supported, GL is disabled
+[0904/235515.692:WARNING:spdy_session.cc(3431)] Received HEADERS for invalid stream 131
+[0904/235640.047:ERROR:gpu_init.cc(426)] Passthrough is not supported, GL is disabled
