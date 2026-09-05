@@ -6,6 +6,7 @@
 #include "EnhancedInputSubsystems.h"
 #include "WalletComponent.h"
 #include "HealthComponent.h"
+#include "PlayerInteractorComponent.h"
 #include "Weapon.h"
 #include "Kismet/GameplayStatics.h"
 #include "Blueprint/UserWidget.h"
@@ -41,6 +42,9 @@ AMainCharacter::AMainCharacter()
 	// 5. Création du composant Wallet et Health
 	WalletComponent = CreateDefaultSubobject<UWalletComponent>(TEXT("WalletComponent"));
 	HealthComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("HealthComponent"));
+
+	// 6. Création du composant d'interaction
+	InteractorComponent = CreateDefaultSubobject<UPlayerInteractorComponent>(TEXT("InteractorComponent"));
 }
 
 void AMainCharacter::BeginPlay()
@@ -113,6 +117,11 @@ void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 			// Quand on relâche Espace : stoppe la poussée du saut (permet les sauts courts/longs)
 			EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Completed, this, &ACharacter::StopJumping);
+		}
+
+		if (InteractAction)
+		{
+			EnhancedInputComponent->BindAction(InteractAction, ETriggerEvent::Started, this, &AMainCharacter::Interact);
 		}
 	}
 }
@@ -200,6 +209,14 @@ void AMainCharacter::Attack()
 	if (AnimInstance && AttackMontage)
 	{
 		AnimInstance->Montage_Play(AttackMontage);
+	}
+}
+
+void AMainCharacter::Interact()
+{
+	if (InteractorComponent)
+	{
+		InteractorComponent->TryInteract(this);
 	}
 }
 

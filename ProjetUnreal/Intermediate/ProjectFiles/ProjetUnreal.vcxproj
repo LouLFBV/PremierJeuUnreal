@@ -271,10 +271,16 @@
     <ClCompile Include="..\..\Source\ProjetUnreal\Private\HealthComponent.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <ClCompile Include="..\..\Source\ProjetUnreal\Private\Interactable.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
     <ClCompile Include="..\..\Source\ProjetUnreal\Private\MainCharacter.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClCompile Include="..\..\Source\ProjetUnreal\Private\MainMenuWidget.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\ProjetUnreal\Private\PlayerInteractorComponent.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClCompile Include="..\..\Source\ProjetUnreal\Private\PlayerStateBase.cpp">
@@ -292,8 +298,10 @@
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\CoinItem.h"/>
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\EnemyBase.h"/>
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\HealthComponent.h"/>
+    <ClInclude Include="..\..\Source\ProjetUnreal\Public\Interactable.h"/>
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\MainCharacter.h"/>
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\MainMenuWidget.h"/>
+    <ClInclude Include="..\..\Source\ProjetUnreal\Public\PlayerInteractorComponent.h"/>
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\PlayerStateBase.h"/>
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\PlayerStateMachineComponent.h"/>
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\WalletComponent.h"/>

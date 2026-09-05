@@ -51,10 +51,16 @@
     <ClCompile Include="..\..\Source\ProjetUnreal\Private\HealthComponent.cpp">
       <Filter>Source\ProjetUnreal\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\ProjetUnreal\Private\Interactable.cpp">
+      <Filter>Source\ProjetUnreal\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\ProjetUnreal\Private\MainCharacter.cpp">
       <Filter>Source\ProjetUnreal\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\ProjetUnreal\Private\MainMenuWidget.cpp">
+      <Filter>Source\ProjetUnreal\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\ProjetUnreal\Private\PlayerInteractorComponent.cpp">
       <Filter>Source\ProjetUnreal\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\ProjetUnreal\Private\PlayerStateBase.cpp">
@@ -81,10 +87,16 @@
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\HealthComponent.h">
       <Filter>Source\ProjetUnreal\Public</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\ProjetUnreal\Public\Interactable.h">
+      <Filter>Source\ProjetUnreal\Public</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\MainCharacter.h">
       <Filter>Source\ProjetUnreal\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\MainMenuWidget.h">
+      <Filter>Source\ProjetUnreal\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\ProjetUnreal\Public\PlayerInteractorComponent.h">
       <Filter>Source\ProjetUnreal\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\PlayerStateBase.h">

@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\prog_perso\\c++\\projet\\premierjeuunreal\\projetunreal\\source\\projetunreal\\private\\interactable.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\prog_perso\\c++\\projet\\premierjeuunreal\\projetunreal\\intermediate\\build\\win64\\x64\\projetunrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "c:\\prog_perso\\c++\\projet\\premierjeuunreal\\projetunreal\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\projetunreal\\definitions.projetunreal.h",
+            "c:\\prog_perso\\c++\\projet\\premierjeuunreal\\projetunreal\\source\\projetunreal\\public\\interactable.h",
+            "c:\\prog_perso\\c++\\projet\\premierjeuunreal\\projetunreal\\intermediate\\build\\win64\\unrealeditor\\inc\\projetunreal\\uht\\interactable.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

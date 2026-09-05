@@ -5,12 +5,14 @@
 			"CoinItem.gen.cpp.obj",
 			"EnemyBase.gen.cpp.obj",
 			"HealthComponent.gen.cpp.obj",
+			"MainCharacter.gen.cpp.obj",
 			"MainMenuWidget.gen.cpp.obj",
 			"PlayerStateBase.gen.cpp.obj",
 			"PlayerStateMachineComponent.gen.cpp.obj",
 			"WalletComponent.gen.cpp.obj",
 			"Weapon.gen.cpp.obj",
-			"MainCharacter.gen.cpp.obj",
+			"Interactable.gen.cpp.obj",
+			"PlayerInteractorComponent.gen.cpp.obj",
 			"ProjetUnreal.init.gen.cpp.obj"
 		]
 	}

@@ -17,6 +17,7 @@ class UHealthComponent;
 class AWeapon;
 class UAnimMontage;
 class USoundBase;
+class UPlayerInteractorComponent;
 
 UCLASS()
 class PROJETUNREAL_API AMainCharacter : public ACharacter
@@ -71,6 +72,9 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Jump")
 	TObjectPtr<USoundBase> JumpSound;
 
+
+	void Interact();
+
 private:
 	/** Bras de la caméra (SpringArm) */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Camera", meta = (AllowPrivateAccess = "true"))
@@ -97,6 +101,9 @@ private:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input", meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<UInputAction> AttackAction;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input", meta = (AllowPrivateAccess = "true"))
+	TObjectPtr<UInputAction> InteractAction;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<UWalletComponent> WalletComponent;
 
@@ -105,6 +112,12 @@ private:
 
 	UPROPERTY()
 	UUserWidget* PauseMenuInstance;
+
+	/** Composant gérant les interactions */
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
+	TObjectPtr<UPlayerInteractorComponent> InteractorComponent;
+
+
 
 public:
 	FORCEINLINE USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
