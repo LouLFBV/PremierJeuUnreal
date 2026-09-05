@@ -45,6 +45,9 @@
     <ClCompile Include="..\..\Source\ProjetUnreal\Private\CoinItem.cpp">
       <Filter>Source\ProjetUnreal\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\ProjetUnreal\Private\Door.cpp">
+      <Filter>Source\ProjetUnreal\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\ProjetUnreal\Private\EnemyBase.cpp">
       <Filter>Source\ProjetUnreal\Private</Filter>
     </ClCompile>
@@ -52,6 +55,9 @@
       <Filter>Source\ProjetUnreal\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\ProjetUnreal\Private\Interactable.cpp">
+      <Filter>Source\ProjetUnreal\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\ProjetUnreal\Private\InteractableBase.cpp">
       <Filter>Source\ProjetUnreal\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\ProjetUnreal\Private\MainCharacter.cpp">
@@ -81,6 +87,9 @@
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\CoinItem.h">
       <Filter>Source\ProjetUnreal\Public</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\ProjetUnreal\Public\Door.h">
+      <Filter>Source\ProjetUnreal\Public</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\EnemyBase.h">
       <Filter>Source\ProjetUnreal\Public</Filter>
     </ClInclude>
@@ -88,6 +97,9 @@
       <Filter>Source\ProjetUnreal\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\Interactable.h">
+      <Filter>Source\ProjetUnreal\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\ProjetUnreal\Public\InteractableBase.h">
       <Filter>Source\ProjetUnreal\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\MainCharacter.h">

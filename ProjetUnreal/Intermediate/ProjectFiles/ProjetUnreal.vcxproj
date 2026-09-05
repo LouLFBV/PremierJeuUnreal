@@ -265,6 +265,9 @@
     <ClCompile Include="..\..\Source\ProjetUnreal\Private\CoinItem.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <ClCompile Include="..\..\Source\ProjetUnreal\Private\Door.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
     <ClCompile Include="..\..\Source\ProjetUnreal\Private\EnemyBase.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
@@ -272,6 +275,9 @@
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClCompile Include="..\..\Source\ProjetUnreal\Private\Interactable.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\ProjetUnreal\Private\InteractableBase.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClCompile Include="..\..\Source\ProjetUnreal\Private\MainCharacter.cpp">
@@ -296,9 +302,11 @@
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\CoinItem.h"/>
+    <ClInclude Include="..\..\Source\ProjetUnreal\Public\Door.h"/>
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\EnemyBase.h"/>
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\HealthComponent.h"/>
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\Interactable.h"/>
+    <ClInclude Include="..\..\Source\ProjetUnreal\Public\InteractableBase.h"/>
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\MainCharacter.h"/>
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\MainMenuWidget.h"/>
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\PlayerInteractorComponent.h"/>
