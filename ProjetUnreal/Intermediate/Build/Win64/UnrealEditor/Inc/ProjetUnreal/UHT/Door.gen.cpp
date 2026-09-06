@@ -19,6 +19,7 @@ ENGINE_API UClass* Z_Construct_UClass_UTimelineComponent_NoRegister();
 PROJETUNREAL_API UClass* Z_Construct_UClass_ADoor();
 PROJETUNREAL_API UClass* Z_Construct_UClass_ADoor_NoRegister();
 PROJETUNREAL_API UClass* Z_Construct_UClass_AInteractableBase();
+PROJETUNREAL_API UClass* Z_Construct_UClass_UItemDataAsset_NoRegister();
 UPackage* Z_Construct_UPackage__Script_ProjetUnreal();
 // ********** End Cross Module References **********************************************************
 
@@ -31,13 +32,7 @@ struct Z_Construct_UFunction_ADoor_UpdateDoorRotation_Statics
 	};
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "// Fonction appel\xef\xbf\xbd""e \xef\xbf\xbd chaque frame par la Timeline pour mettre \xef\xbf\xbd jour la rotation\n" },
-#endif
 		{ "ModuleRelativePath", "Public/Door.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Fonction appel\xef\xbf\xbd""e \xef\xbf\xbd chaque frame par la Timeline pour mettre \xef\xbf\xbd jour la rotation" },
-#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_Value;
@@ -117,14 +112,8 @@ struct Z_Construct_UClass_ADoor_Statics
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DoorMesh_MetaData[] = {
 		{ "Category", "Components" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "// Le maillage de la porte (l'\xef\xbf\xbdquivalent de ton GameObject \"door\")\n" },
-#endif
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/Door.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Le maillage de la porte (l'\xef\xbf\xbdquivalent de ton GameObject \"door\")" },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DoorTimeline_MetaData[] = {
 		{ "Category", "Animation" },
@@ -169,6 +158,10 @@ struct Z_Construct_UClass_ADoor_Statics
 		{ "ToolTip", "--- \xef\xbf\xbdtats ---" },
 #endif
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_RequiredKeyAsset_MetaData[] = {
+		{ "Category", "Door" },
+		{ "ModuleRelativePath", "Public/Door.h" },
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_DoorMesh;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_DoorTimeline;
@@ -178,10 +171,11 @@ struct Z_Construct_UClass_ADoor_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_LockedDoorSound;
 	static void NewProp_bIsLocked_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bIsLocked;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_RequiredKeyAsset;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
-		{ &Z_Construct_UFunction_ADoor_UpdateDoorRotation, "UpdateDoorRotation" }, // 3969852360
+		{ &Z_Construct_UFunction_ADoor_UpdateDoorRotation, "UpdateDoorRotation" }, // 1189736801
 	};
 	static_assert(UE_ARRAY_COUNT(FuncInfo) < 2048);
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -200,6 +194,7 @@ void Z_Construct_UClass_ADoor_Statics::NewProp_bIsLocked_SetBit(void* Obj)
 	((ADoor*)Obj)->bIsLocked = 1;
 }
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ADoor_Statics::NewProp_bIsLocked = { "bIsLocked", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(ADoor), &Z_Construct_UClass_ADoor_Statics::NewProp_bIsLocked_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bIsLocked_MetaData), NewProp_bIsLocked_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ADoor_Statics::NewProp_RequiredKeyAsset = { "RequiredKeyAsset", nullptr, (EPropertyFlags)0x0124080000000015, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(ADoor, RequiredKeyAsset), Z_Construct_UClass_UItemDataAsset_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_RequiredKeyAsset_MetaData), NewProp_RequiredKeyAsset_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ADoor_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADoor_Statics::NewProp_DoorMesh,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADoor_Statics::NewProp_DoorTimeline,
@@ -208,6 +203,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ADoor_Sta
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADoor_Statics::NewProp_OpenDoorSound,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADoor_Statics::NewProp_LockedDoorSound,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADoor_Statics::NewProp_bIsLocked,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ADoor_Statics::NewProp_RequiredKeyAsset,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_ADoor_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_ADoor_Statics::DependentSingletons[])() = {
@@ -246,10 +242,10 @@ ADoor::~ADoor() {}
 struct Z_CompiledInDeferFile_FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_Door_h__Script_ProjetUnreal_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ADoor, ADoor::StaticClass, TEXT("ADoor"), &Z_Registration_Info_UClass_ADoor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADoor), 1834397255U) },
+		{ Z_Construct_UClass_ADoor, ADoor::StaticClass, TEXT("ADoor"), &Z_Registration_Info_UClass_ADoor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ADoor), 2204285748U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_Door_h__Script_ProjetUnreal_1824936556(TEXT("/Script/ProjetUnreal"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_Door_h__Script_ProjetUnreal_3597080418(TEXT("/Script/ProjetUnreal"),
 	Z_CompiledInDeferFile_FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_Door_h__Script_ProjetUnreal_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_Door_h__Script_ProjetUnreal_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

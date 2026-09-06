@@ -60,10 +60,19 @@
     <ClCompile Include="..\..\Source\ProjetUnreal\Private\InteractableBase.cpp">
       <Filter>Source\ProjetUnreal\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\ProjetUnreal\Private\InventoryComponent.cpp">
+      <Filter>Source\ProjetUnreal\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\ProjetUnreal\Private\ItemData.cpp">
+      <Filter>Source\ProjetUnreal\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\ProjetUnreal\Private\MainCharacter.cpp">
       <Filter>Source\ProjetUnreal\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\ProjetUnreal\Private\MainMenuWidget.cpp">
+      <Filter>Source\ProjetUnreal\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\ProjetUnreal\Private\PickupItem.cpp">
       <Filter>Source\ProjetUnreal\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\ProjetUnreal\Private\PlayerInteractorComponent.cpp">
@@ -102,10 +111,19 @@
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\InteractableBase.h">
       <Filter>Source\ProjetUnreal\Public</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\ProjetUnreal\Public\InventoryComponent.h">
+      <Filter>Source\ProjetUnreal\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\ProjetUnreal\Public\ItemData.h">
+      <Filter>Source\ProjetUnreal\Public</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\MainCharacter.h">
       <Filter>Source\ProjetUnreal\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\MainMenuWidget.h">
+      <Filter>Source\ProjetUnreal\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\ProjetUnreal\Public\PickupItem.h">
       <Filter>Source\ProjetUnreal\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\PlayerInteractorComponent.h">

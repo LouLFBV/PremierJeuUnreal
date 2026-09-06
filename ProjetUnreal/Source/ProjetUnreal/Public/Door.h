@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "InteractableBase.h"
 #include "Components/TimelineComponent.h"
+#include "ItemData.h"
 #include "Door.generated.h"
 
 class UStaticMeshComponent;
@@ -17,13 +18,14 @@ class PROJETUNREAL_API ADoor : public AInteractableBase
 public:
 	ADoor();
 
-	// On surcharge (override) l'interaction définie dans l'interface
 	virtual void OnInteract(class AMainCharacter* Player) override;
 
 protected:
 	virtual void BeginPlay() override;
 
-	// Le maillage de la porte (l'équivalent de ton GameObject "door")
+	// Fonction de bascule d'ouverture / fermeture
+	void ToggleDoor();
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	TObjectPtr<UStaticMeshComponent> DoorMesh;
 
@@ -50,8 +52,10 @@ protected:
 
 	bool bIsOpen = false;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Door")
+	TObjectPtr<UItemDataAsset> RequiredKeyAsset;
+
 private:
-	// Fonction appelée à chaque frame par la Timeline pour mettre à jour la rotation
 	UFUNCTION()
 	void UpdateDoorRotation(float Value);
 };

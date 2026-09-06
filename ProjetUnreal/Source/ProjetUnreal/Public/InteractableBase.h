@@ -32,6 +32,9 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Interaction")
 	bool bIsInteractable = true;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Interaction|UI")
+	bool bUseDynamicUIPosition = false; // Désactivé par défaut
+
 	// --- NOUVEAU : Paramètres de positionnement de l'UI ---
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Interaction|UI")

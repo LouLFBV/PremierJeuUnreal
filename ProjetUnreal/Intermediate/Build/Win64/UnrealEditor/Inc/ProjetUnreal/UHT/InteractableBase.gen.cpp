@@ -76,6 +76,10 @@ struct Z_Construct_UClass_AInteractableBase_Statics
 		{ "Category", "Interaction" },
 		{ "ModuleRelativePath", "Public/InteractableBase.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_bUseDynamicUIPosition_MetaData[] = {
+		{ "Category", "Interaction|UI" },
+		{ "ModuleRelativePath", "Public/InteractableBase.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DistanceFromObject_MetaData[] = {
 		{ "Category", "Interaction|UI" },
 #if !UE_BUILD_SHIPPING
@@ -110,6 +114,8 @@ struct Z_Construct_UClass_AInteractableBase_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_InteractWidget;
 	static void NewProp_bIsInteractable_SetBit(void* Obj);
 	static const UECodeGen_Private::FBoolPropertyParams NewProp_bIsInteractable;
+	static void NewProp_bUseDynamicUIPosition_SetBit(void* Obj);
+	static const UECodeGen_Private::FBoolPropertyParams NewProp_bUseDynamicUIPosition;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_DistanceFromObject;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_HeightOffset;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_CurrentPlayer;
@@ -128,6 +134,11 @@ void Z_Construct_UClass_AInteractableBase_Statics::NewProp_bIsInteractable_SetBi
 	((AInteractableBase*)Obj)->bIsInteractable = 1;
 }
 const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AInteractableBase_Statics::NewProp_bIsInteractable = { "bIsInteractable", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(AInteractableBase), &Z_Construct_UClass_AInteractableBase_Statics::NewProp_bIsInteractable_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bIsInteractable_MetaData), NewProp_bIsInteractable_MetaData) };
+void Z_Construct_UClass_AInteractableBase_Statics::NewProp_bUseDynamicUIPosition_SetBit(void* Obj)
+{
+	((AInteractableBase*)Obj)->bUseDynamicUIPosition = 1;
+}
+const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AInteractableBase_Statics::NewProp_bUseDynamicUIPosition = { "bUseDynamicUIPosition", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, sizeof(bool), sizeof(AInteractableBase), &Z_Construct_UClass_AInteractableBase_Statics::NewProp_bUseDynamicUIPosition_SetBit, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_bUseDynamicUIPosition_MetaData), NewProp_bUseDynamicUIPosition_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AInteractableBase_Statics::NewProp_DistanceFromObject = { "DistanceFromObject", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AInteractableBase, DistanceFromObject), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DistanceFromObject_MetaData), NewProp_DistanceFromObject_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AInteractableBase_Statics::NewProp_HeightOffset = { "HeightOffset", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AInteractableBase, HeightOffset), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_HeightOffset_MetaData), NewProp_HeightOffset_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AInteractableBase_Statics::NewProp_CurrentPlayer = { "CurrentPlayer", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AInteractableBase, CurrentPlayer), Z_Construct_UClass_AMainCharacter_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CurrentPlayer_MetaData), NewProp_CurrentPlayer_MetaData) };
@@ -135,6 +146,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AInteract
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AInteractableBase_Statics::NewProp_DefaultRoot,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AInteractableBase_Statics::NewProp_InteractWidget,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AInteractableBase_Statics::NewProp_bIsInteractable,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AInteractableBase_Statics::NewProp_bUseDynamicUIPosition,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AInteractableBase_Statics::NewProp_DistanceFromObject,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AInteractableBase_Statics::NewProp_HeightOffset,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AInteractableBase_Statics::NewProp_CurrentPlayer,
@@ -179,10 +191,10 @@ AInteractableBase::~AInteractableBase() {}
 struct Z_CompiledInDeferFile_FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_InteractableBase_h__Script_ProjetUnreal_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AInteractableBase, AInteractableBase::StaticClass, TEXT("AInteractableBase"), &Z_Registration_Info_UClass_AInteractableBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AInteractableBase), 3393816675U) },
+		{ Z_Construct_UClass_AInteractableBase, AInteractableBase::StaticClass, TEXT("AInteractableBase"), &Z_Registration_Info_UClass_AInteractableBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AInteractableBase), 838010789U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_InteractableBase_h__Script_ProjetUnreal_2432982932(TEXT("/Script/ProjetUnreal"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_InteractableBase_h__Script_ProjetUnreal_2540580708(TEXT("/Script/ProjetUnreal"),
 	Z_CompiledInDeferFile_FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_InteractableBase_h__Script_ProjetUnreal_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_InteractableBase_h__Script_ProjetUnreal_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

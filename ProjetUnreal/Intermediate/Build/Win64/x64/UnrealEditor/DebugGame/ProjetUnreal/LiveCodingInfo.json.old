@@ -1,7 +1,7 @@
 {
 	"RemapUnityFiles": 
 	{
-		"Module.ProjetUnreal.gen.cpp.obj": [
+		"Module.ProjetUnreal.cpp.obj": [
 			"CoinItem.gen.cpp.obj",
 			"EnemyBase.gen.cpp.obj",
 			"HealthComponent.gen.cpp.obj",
@@ -13,8 +13,30 @@
 			"PlayerStateMachineComponent.gen.cpp.obj",
 			"WalletComponent.gen.cpp.obj",
 			"Weapon.gen.cpp.obj",
+			"PerModuleInline.gen.cpp.obj",
+			"CoinItem.cpp.obj",
+			"EnemyBase.cpp.obj",
+			"HealthComponent.cpp.obj",
+			"Interactable.cpp.obj",
+			"MainMenuWidget.cpp.obj",
+			"PlayerInteractorComponent.cpp.obj",
+			"PlayerStateBase.cpp.obj",
+			"PlayerStateMachineComponent.cpp.obj",
+			"WalletComponent.cpp.obj",
+			"Weapon.cpp.obj",
+			"ProjetUnreal.cpp.obj",
+			"Door.gen.cpp.obj",
 			"InteractableBase.gen.cpp.obj",
-			"ProjetUnreal.init.gen.cpp.obj"
+			"InventoryComponent.gen.cpp.obj",
+			"ItemData.gen.cpp.obj",
+			"PickupItem.gen.cpp.obj",
+			"ProjetUnreal.init.gen.cpp.obj",
+			"Door.cpp.obj",
+			"InteractableBase.cpp.obj",
+			"InventoryComponent.cpp.obj",
+			"ItemData.cpp.obj",
+			"MainCharacter.cpp.obj",
+			"PickupItem.cpp.obj"
 		]
 	}
 }

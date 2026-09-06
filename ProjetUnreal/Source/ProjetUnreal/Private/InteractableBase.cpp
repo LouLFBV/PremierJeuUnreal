@@ -33,21 +33,17 @@ void AInteractableBase::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	// 3. L'équivalent de ton UpdateWorldPosition()
-	if (CurrentPlayer && InteractWidget->IsVisible())
+	// On ne calcule la position dynamique QUE si l'option est activée
+	if (bUseDynamicUIPosition && CurrentPlayer && InteractWidget->IsVisible())
 	{
 		FVector ObjectPos = GetActorLocation();
 		FVector PlayerPos = CurrentPlayer->GetActorLocation();
 
-		// Calcul de la direction (on annule le Z pour que l'icône reste droite et ne penche pas vers le sol)
 		FVector Dir = (PlayerPos - ObjectPos);
 		Dir.Z = 0.f;
 		Dir.Normalize();
 
-		// Application de la formule : position + (direction * distance) + hauteur
 		FVector IconPos = ObjectPos + (Dir * DistanceFromObject) + FVector(0.f, 0.f, HeightOffset);
-
-		// On applique la position absolue au Widget
 		InteractWidget->SetWorldLocation(IconPos);
 	}
 }

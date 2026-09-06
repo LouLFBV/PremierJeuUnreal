@@ -45,6 +45,9 @@ AMainCharacter::AMainCharacter()
 
 	// 6. Création du composant d'interaction
 	InteractorComponent = CreateDefaultSubobject<UPlayerInteractorComponent>(TEXT("InteractorComponent"));
+
+	// 7. Création du composant d'inventaire
+	InventoryComponent = CreateDefaultSubobject<UInventoryComponent>(TEXT("InventoryComponent"));
 }
 
 void AMainCharacter::BeginPlay()

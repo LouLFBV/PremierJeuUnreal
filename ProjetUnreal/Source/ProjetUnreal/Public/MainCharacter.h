@@ -4,6 +4,7 @@
 #include "GameFramework/Character.h"
 #include "InputActionValue.h"
 #include "Blueprint/UserWidget.h"
+#include "InventoryComponent.h"
 #include "MainCharacter.generated.h"
 
 // 1. Ajouter la déclaration anticipée de la classe AWeapon
@@ -72,6 +73,9 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Jump")
 	TObjectPtr<USoundBase> JumpSound;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
+	TObjectPtr<UInventoryComponent> InventoryComponent;
+
 
 	void Interact();
 
@@ -124,6 +128,7 @@ public:
 	FORCEINLINE UCameraComponent* GetFollowCamera() const { return FollowCamera; }
 	FORCEINLINE UPlayerStateMachineComponent* GetStateMachine() const { return StateMachineComponent; }
 	FORCEINLINE UWalletComponent* GetWalletComponent() const { return WalletComponent; }
+	UInventoryComponent* GetInventoryComponent() const { return InventoryComponent; }
 
 	// 4. Getter pour récupérer l'arme équipée facilement
 	UFUNCTION(BlueprintCallable, Category = "Combat")

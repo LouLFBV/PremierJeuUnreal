@@ -3,6 +3,7 @@
 #include "C:/prog_perso/C++/Projet/PremierJeuUnreal/ProjetUnreal/Intermediate/Build/Win64/UnrealEditor/Inc/ProjetUnreal/UHT/EnemyBase.gen.cpp"
 #include "C:/prog_perso/C++/Projet/PremierJeuUnreal/ProjetUnreal/Intermediate/Build/Win64/UnrealEditor/Inc/ProjetUnreal/UHT/HealthComponent.gen.cpp"
 #include "C:/prog_perso/C++/Projet/PremierJeuUnreal/ProjetUnreal/Intermediate/Build/Win64/UnrealEditor/Inc/ProjetUnreal/UHT/Interactable.gen.cpp"
+#include "C:/prog_perso/C++/Projet/PremierJeuUnreal/ProjetUnreal/Intermediate/Build/Win64/UnrealEditor/Inc/ProjetUnreal/UHT/ItemData.gen.cpp"
 #include "C:/prog_perso/C++/Projet/PremierJeuUnreal/ProjetUnreal/Intermediate/Build/Win64/UnrealEditor/Inc/ProjetUnreal/UHT/MainCharacter.gen.cpp"
 #include "C:/prog_perso/C++/Projet/PremierJeuUnreal/ProjetUnreal/Intermediate/Build/Win64/UnrealEditor/Inc/ProjetUnreal/UHT/MainMenuWidget.gen.cpp"
 #include "C:/prog_perso/C++/Projet/PremierJeuUnreal/ProjetUnreal/Intermediate/Build/Win64/UnrealEditor/Inc/ProjetUnreal/UHT/PlayerInteractorComponent.gen.cpp"

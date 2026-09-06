@@ -1,14 +1,21 @@
 #include "Door.h"
+#include "InventoryComponent.h"
+#include "MainCharacter.h"
 #include "Components/StaticMeshComponent.h"
+#include "Components/WidgetComponent.h"
 #include "Kismet/GameplayStatics.h"
 
 ADoor::ADoor()
 {
-	// 1. Création du maillage et attachement à la racine définie dans InteractableBase
 	DoorMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("DoorMesh"));
 	DoorMesh->SetupAttachment(RootComponent);
+	DoorMesh->SetMobility(EComponentMobility::Movable);
 
-	// 2. Création de la Timeline
+	if (InteractWidget)
+	{
+		InteractWidget->SetupAttachment(DoorMesh);
+	}
+
 	DoorTimeline = CreateDefaultSubobject<UTimelineComponent>(TEXT("DoorTimeline"));
 }
 
@@ -16,7 +23,6 @@ void ADoor::BeginPlay()
 {
 	Super::BeginPlay();
 
-	// 3. Liaison de la courbe à notre fonction de rotation
 	if (DoorCurve)
 	{
 		FOnTimelineFloat TimelineProgress;
@@ -27,22 +33,48 @@ void ADoor::BeginPlay()
 
 void ADoor::OnInteract(AMainCharacter* Player)
 {
-	// L'équivalent de ton OpenAndCloseDoor()
+	if (GEngine)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("Interaction avec la porte !"));
+	}
+	if (!Player) return;
+
 	if (bIsLocked)
 	{
-		if (LockedDoorSound)
-		{
-			UGameplayStatics::PlaySoundAtLocation(this, LockedDoorSound, GetActorLocation());
-		}
-		return;
-	}
+		UInventoryComponent* Inventory = Player->GetInventoryComponent();
 
+		if (RequiredKeyAsset && Inventory && Inventory->HasItem(RequiredKeyAsset))
+		{
+			Inventory->RemoveItem(RequiredKeyAsset, 1);
+			bIsLocked = false;
+			UE_LOG(LogTemp, Log, TEXT("Porte déverrouillée avec la clé !"));
+
+			Super::OnInteract(Player);
+			ToggleDoor();
+		}
+		else
+		{
+			if (LockedDoorSound)
+			{
+				UGameplayStatics::PlaySoundAtLocation(this, LockedDoorSound, GetActorLocation());
+			}
+			UE_LOG(LogTemp, Warning, TEXT("Il faut une clé pour ouvrir cette porte !"));
+		}
+	}
+	else
+	{
+		Super::OnInteract(Player);
+		ToggleDoor();
+	}
+}
+
+void ADoor::ToggleDoor()
+{
 	if (OpenDoorSound)
 	{
 		UGameplayStatics::PlaySoundAtLocation(this, OpenDoorSound, GetActorLocation());
 	}
 
-	// On lance la Timeline dans le bon sens
 	if (bIsOpen)
 	{
 		DoorTimeline->Reverse();
@@ -57,8 +89,6 @@ void ADoor::OnInteract(AMainCharacter* Player)
 
 void ADoor::UpdateDoorRotation(float Value)
 {
-	// Value ira de 0 à 1 (ou inversement) selon la courbe. 
-	// On la multiplie par l'angle final (ex: 90 degrés).
 	FRotator NewRotation = FRotator(0.f, Value * OpenAngle, 0.f);
 	DoorMesh->SetRelativeRotation(NewRotation);
 }
