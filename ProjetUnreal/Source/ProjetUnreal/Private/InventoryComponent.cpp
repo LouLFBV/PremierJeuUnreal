@@ -8,99 +8,110 @@ UInventoryComponent::UInventoryComponent()
 void UInventoryComponent::BeginPlay()
 {
 	Super::BeginPlay();
+
+	// Remplit le tableau avec 20 emplacements vides par défaut
+	InventorySlots.SetNum(Capacity);
 }
 
-bool UInventoryComponent::AddItem(UItemDataAsset* ItemData, int32 QuantityToAdd)
+bool UInventoryComponent::AddItem(UItemDataAsset* Item, int32 Quantity)
 {
-	if (!ItemData || QuantityToAdd <= 0) return false;
+	if (!Item || Quantity <= 0) return false;
 
-	const FItemData& Data = ItemData->ItemData;
-	int32 AmountRemaining = QuantityToAdd;
+	int32 Remaining = Quantity;
 
-	// 1. Si l'objet est empilable (Stackable), on cherche un slot existant
-	if (Data.bIsStackable)
+	// Tentative d'empilement dans une case avec le même objet
+	if (Item->ItemData.bIsStackable)
 	{
 		for (FInventorySlot& Slot : InventorySlots)
 		{
-			if (Slot.ItemDataAsset == ItemData && Slot.Quantity < Data.MaxStack)
+			if (Slot.IsValid() && Slot.ItemData == Item && Slot.Quantity < Item->ItemData.MaxStack)
 			{
-				int32 RoomInSlot = Data.MaxStack - Slot.Quantity;
-				int32 AddToThisSlot = FMath::Min(AmountRemaining, RoomInSlot);
+				int32 SpaceLeft = Item->ItemData.MaxStack - Slot.Quantity;
+				int32 AddAmount = FMath::Min(Remaining, SpaceLeft);
 
-				Slot.Quantity += AddToThisSlot;
-				AmountRemaining -= AddToThisSlot;
+				Slot.Quantity += AddAmount;
+				Remaining -= AddAmount;
 
-				if (AmountRemaining <= 0)
-				{
-					OnInventoryUpdated.Broadcast();
-					return true;
-				}
+				if (Remaining <= 0) break;
 			}
 		}
 	}
 
-	// 2. S'il reste de la quantité à ajouter et qu'il y a de la place disponible
-	while (AmountRemaining > 0 && InventorySlots.Num() < Capacity)
+	// Si du surplus reste, placement dans la première case vide
+	if (Remaining > 0)
 	{
-		int32 AddToNewSlot = Data.bIsStackable ? FMath::Min(AmountRemaining, Data.MaxStack) : 1;
-		InventorySlots.Add(FInventorySlot(ItemData, AddToNewSlot));
-		AmountRemaining -= AddToNewSlot;
-	}
-
-	// Prévenir l'UI que l'inventaire a changé
-	OnInventoryUpdated.Broadcast();
-
-	// Retourne vrai si TOUT le paquet a pu être ajouté
-	return (AmountRemaining == 0);
-}
-
-bool UInventoryComponent::RemoveItem(UItemDataAsset* ItemData, int32 QuantityToRemove)
-{
-	if (!ItemData || QuantityToRemove <= 0) return false;
-	if (!HasItem(ItemData, QuantityToRemove)) return false;
-
-	int32 AmountRemaining = QuantityToRemove;
-
-	for (int32 i = InventorySlots.Num() - 1; i >= 0; --i)
-	{
-		if (InventorySlots[i].ItemDataAsset == ItemData)
+		for (FInventorySlot& Slot : InventorySlots)
 		{
-			if (InventorySlots[i].Quantity > AmountRemaining)
+			if (!Slot.IsValid())
 			{
-				InventorySlots[i].Quantity -= AmountRemaining;
-				AmountRemaining = 0;
-				break;
-			}
-			else
-			{
-				AmountRemaining -= InventorySlots[i].Quantity;
-				InventorySlots.RemoveAt(i);
-			}
+				Slot.ItemData = Item;
+				int32 AddAmount = Item->ItemData.bIsStackable ? FMath::Min(Remaining, Item->ItemData.MaxStack) : 1;
 
-			if (AmountRemaining <= 0) break;
+				Slot.Quantity = AddAmount;
+				Remaining -= AddAmount;
+
+				if (Remaining <= 0) break;
+			}
 		}
 	}
 
+	// Notification à l'UI
 	OnInventoryUpdated.Broadcast();
-	return true;
+
+	return Remaining == 0;
 }
 
-bool UInventoryComponent::HasItem(UItemDataAsset* ItemData, int32 RequiredQuantity) const
+bool UInventoryComponent::RemoveItemFromSlot(int32 SlotIndex, int32 Amount)
 {
-	return GetItemQuantity(ItemData) >= RequiredQuantity;
+	if (InventorySlots.IsValidIndex(SlotIndex) && InventorySlots[SlotIndex].IsValid())
+	{
+		InventorySlots[SlotIndex].Quantity -= Amount;
+
+		if (InventorySlots[SlotIndex].Quantity <= 0)
+		{
+			InventorySlots[SlotIndex].Clear();
+		}
+
+		OnInventoryUpdated.Broadcast();
+		return true;
+	}
+	return false;
 }
 
-int32 UInventoryComponent::GetItemQuantity(UItemDataAsset* ItemData) const
+bool UInventoryComponent::RemoveItem(UItemDataAsset* Item, int32 Quantity)
 {
-	if (!ItemData) return 0;
+	if (!Item || Quantity <= 0) return false;
 
-	int32 Total = 0;
+	int32 RemainingToRemove = Quantity;
+
+	for (int32 i = 0; i < InventorySlots.Num(); ++i)
+	{
+		if (InventorySlots[i].IsValid() && InventorySlots[i].ItemData == Item)
+		{
+			int32 AmountInSlot = InventorySlots[i].Quantity;
+			int32 RemoveAmount = FMath::Min(RemainingToRemove, AmountInSlot);
+
+			// Utilise la méthode par slot déjà existante
+			RemoveItemFromSlot(i, RemoveAmount);
+			RemainingToRemove -= RemoveAmount;
+
+			if (RemainingToRemove <= 0) break;
+		}
+	}
+
+	return RemainingToRemove == 0;
+}
+
+bool UInventoryComponent::HasItem(UItemDataAsset* Item) const
+{
+	if (!Item) return false;
+
 	for (const FInventorySlot& Slot : InventorySlots)
 	{
-		if (Slot.ItemDataAsset == ItemData)
+		if (Slot.IsValid() && Slot.ItemData == Item)
 		{
-			Total += Slot.Quantity;
+			return true;
 		}
 	}
-	return Total;
+	return false;
 }

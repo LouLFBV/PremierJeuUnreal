@@ -17,36 +17,25 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 class UItemDataAsset;
-struct FInventorySlot;
-
-// ********** Begin ScriptStruct FInventorySlot ****************************************************
-#define FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_InventoryComponent_h_12_GENERATED_BODY \
-	friend struct Z_Construct_UScriptStruct_FInventorySlot_Statics; \
-	PROJETUNREAL_API static class UScriptStruct* StaticStruct();
-
-
-struct FInventorySlot;
-// ********** End ScriptStruct FInventorySlot ******************************************************
 
 // ********** Begin Delegate FOnInventoryUpdated ***************************************************
-#define FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_InventoryComponent_h_27_DELEGATE \
+#define FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_InventoryComponent_h_8_DELEGATE \
 PROJETUNREAL_API void FOnInventoryUpdated_DelegateWrapper(const FMulticastScriptDelegate& OnInventoryUpdated);
 
 
 // ********** End Delegate FOnInventoryUpdated *****************************************************
 
 // ********** Begin Class UInventoryComponent ******************************************************
-#define FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_InventoryComponent_h_32_RPC_WRAPPERS_NO_PURE_DECLS \
-	DECLARE_FUNCTION(execGetSlots); \
-	DECLARE_FUNCTION(execGetItemQuantity); \
+#define FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_InventoryComponent_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execHasItem); \
 	DECLARE_FUNCTION(execRemoveItem); \
+	DECLARE_FUNCTION(execRemoveItemFromSlot); \
 	DECLARE_FUNCTION(execAddItem);
 
 
 PROJETUNREAL_API UClass* Z_Construct_UClass_UInventoryComponent_NoRegister();
 
-#define FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_InventoryComponent_h_32_INCLASS_NO_PURE_DECLS \
+#define FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_InventoryComponent_h_13_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUInventoryComponent(); \
 	friend struct Z_Construct_UClass_UInventoryComponent_Statics; \
@@ -57,7 +46,7 @@ public: \
 	DECLARE_SERIALIZER(UInventoryComponent)
 
 
-#define FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_InventoryComponent_h_32_ENHANCED_CONSTRUCTORS \
+#define FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_InventoryComponent_h_13_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	UInventoryComponent(UInventoryComponent&&) = delete; \
 	UInventoryComponent(const UInventoryComponent&) = delete; \
@@ -67,13 +56,13 @@ public: \
 	NO_API virtual ~UInventoryComponent();
 
 
-#define FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_InventoryComponent_h_29_PROLOG
-#define FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_InventoryComponent_h_32_GENERATED_BODY \
+#define FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_InventoryComponent_h_10_PROLOG
+#define FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_InventoryComponent_h_13_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_InventoryComponent_h_32_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_InventoryComponent_h_32_INCLASS_NO_PURE_DECLS \
-	FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_InventoryComponent_h_32_ENHANCED_CONSTRUCTORS \
+	FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_InventoryComponent_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_InventoryComponent_h_13_INCLASS_NO_PURE_DECLS \
+	FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_InventoryComponent_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

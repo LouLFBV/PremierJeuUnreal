@@ -283,6 +283,15 @@
     <ClCompile Include="..\..\Source\ProjetUnreal\Private\InventoryComponent.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <ClCompile Include="..\..\Source\ProjetUnreal\Private\InventorySlotWidget.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\ProjetUnreal\Private\InventoryTypes.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\ProjetUnreal\Private\InventoryWidget.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
     <ClCompile Include="..\..\Source\ProjetUnreal\Private\ItemData.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
@@ -317,6 +326,9 @@
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\Interactable.h"/>
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\InteractableBase.h"/>
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\InventoryComponent.h"/>
+    <ClInclude Include="..\..\Source\ProjetUnreal\Public\InventorySlotWidget.h"/>
+    <ClInclude Include="..\..\Source\ProjetUnreal\Public\InventoryTypes.h"/>
+    <ClInclude Include="..\..\Source\ProjetUnreal\Public\InventoryWidget.h"/>
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\ItemData.h"/>
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\MainCharacter.h"/>
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\MainMenuWidget.h"/>

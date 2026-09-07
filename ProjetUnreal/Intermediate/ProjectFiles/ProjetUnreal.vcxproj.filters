@@ -63,6 +63,15 @@
     <ClCompile Include="..\..\Source\ProjetUnreal\Private\InventoryComponent.cpp">
       <Filter>Source\ProjetUnreal\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\ProjetUnreal\Private\InventorySlotWidget.cpp">
+      <Filter>Source\ProjetUnreal\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\ProjetUnreal\Private\InventoryTypes.cpp">
+      <Filter>Source\ProjetUnreal\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\ProjetUnreal\Private\InventoryWidget.cpp">
+      <Filter>Source\ProjetUnreal\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\ProjetUnreal\Private\ItemData.cpp">
       <Filter>Source\ProjetUnreal\Private</Filter>
     </ClCompile>
@@ -112,6 +121,15 @@
       <Filter>Source\ProjetUnreal\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\InventoryComponent.h">
+      <Filter>Source\ProjetUnreal\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\ProjetUnreal\Public\InventorySlotWidget.h">
+      <Filter>Source\ProjetUnreal\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\ProjetUnreal\Public\InventoryTypes.h">
+      <Filter>Source\ProjetUnreal\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\ProjetUnreal\Public\InventoryWidget.h">
       <Filter>Source\ProjetUnreal\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\ProjetUnreal\Public\ItemData.h">
