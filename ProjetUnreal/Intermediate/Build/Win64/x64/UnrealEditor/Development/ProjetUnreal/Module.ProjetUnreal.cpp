@@ -27,7 +27,6 @@
 #include "C:/prog_perso/C++/Projet/PremierJeuUnreal/ProjetUnreal/Source/ProjetUnreal/Private/Interactable.cpp"
 #include "C:/prog_perso/C++/Projet/PremierJeuUnreal/ProjetUnreal/Source/ProjetUnreal/Private/InteractableBase.cpp"
 #include "C:/prog_perso/C++/Projet/PremierJeuUnreal/ProjetUnreal/Source/ProjetUnreal/Private/InventoryComponent.cpp"
-#include "C:/prog_perso/C++/Projet/PremierJeuUnreal/ProjetUnreal/Source/ProjetUnreal/Private/InventorySlotWidget.cpp"
 #include "C:/prog_perso/C++/Projet/PremierJeuUnreal/ProjetUnreal/Source/ProjetUnreal/Private/InventoryTypes.cpp"
 #include "C:/prog_perso/C++/Projet/PremierJeuUnreal/ProjetUnreal/Source/ProjetUnreal/Private/ItemData.cpp"
 #include "C:/prog_perso/C++/Projet/PremierJeuUnreal/ProjetUnreal/Source/ProjetUnreal/Private/MainCharacter.cpp"

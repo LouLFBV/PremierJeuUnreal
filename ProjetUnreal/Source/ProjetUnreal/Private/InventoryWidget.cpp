@@ -8,9 +8,12 @@ void UInventoryWidget::InitializeWidget(UInventoryComponent* InInventory)
 	if (!InInventory) return;
 
 	TargetInventory = InInventory;
+
+	// Évite les doublons de binding
+	TargetInventory->OnInventoryUpdated.RemoveDynamic(this, &UInventoryWidget::RefreshGrid);
 	TargetInventory->OnInventoryUpdated.AddDynamic(this, &UInventoryWidget::RefreshGrid);
 
-	if(GEngine)
+	if (GEngine)
 	{
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("Inventory Widget Initialized"));
 	}
@@ -19,16 +22,8 @@ void UInventoryWidget::InitializeWidget(UInventoryComponent* InInventory)
 
 void UInventoryWidget::RefreshGrid()
 {
-	if (!TargetInventory) GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("ERREUR : TargetInventory est NULL !"));
-	if (!SlotsContainer) GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("ERREUR : SlotsContainer est NULL !"));
-	if (!SlotWidgetClass) GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("ERREUR : SlotWidgetClass est NULL !"));
-
 	if (!TargetInventory || !SlotsContainer || !SlotWidgetClass) return;
 
-	if (GEngine)
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("Clearing Slots Container"));
-	}
 	SlotsContainer->ClearChildren();
 
 	const TArray<FInventorySlot>& Slots = TargetInventory->GetSlots();
@@ -38,19 +33,11 @@ void UInventoryWidget::RefreshGrid()
 		UInventorySlotWidget* NewSlot = CreateWidget<UInventorySlotWidget>(this, SlotWidgetClass);
 		if (NewSlot)
 		{
-			if (GEngine)
-			{
-				GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, FString::Printf(TEXT("Adding Slot %d: %s x%d"), i, *Slots[i].ItemData->GetName(), Slots[i].Quantity));
-			}
+			// Sécurisation de l'accès à ItemData
+			FString ItemName = Slots[i].ItemData ? Slots[i].ItemData->GetName() : TEXT("Empty");
+
 			NewSlot->UpdateSlot(Slots[i]);
 			SlotsContainer->AddChild(NewSlot);
-		}
-		else
-		{
-			if (GEngine)
-			{
-				GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Failed to create slot widget for index %d"), i));
-			}
 		}
 	}
 }

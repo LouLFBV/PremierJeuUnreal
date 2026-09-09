@@ -30,7 +30,6 @@
 			"Interactable.cpp.obj",
 			"InteractableBase.cpp.obj",
 			"InventoryComponent.cpp.obj",
-			"InventorySlotWidget.cpp.obj",
 			"InventoryTypes.cpp.obj",
 			"ItemData.cpp.obj",
 			"MainCharacter.cpp.obj",
@@ -42,6 +41,7 @@
 			"WalletComponent.cpp.obj",
 			"Weapon.cpp.obj",
 			"ProjetUnreal.cpp.obj",
+			"InventorySlotWidget.cpp.obj",
 			"InventoryWidget.cpp.obj"
 		]
 	}
