@@ -2,24 +2,6 @@
 	"RemapUnityFiles": 
 	{
 		"Module.ProjetUnreal.cpp.obj": [
-			"CoinItem.cpp.obj",
-			"Door.cpp.obj",
-			"EnemyBase.cpp.obj",
-			"HealthComponent.cpp.obj",
-			"Interactable.cpp.obj",
-			"InteractableBase.cpp.obj",
-			"InventoryComponent.cpp.obj",
-			"InventoryTypes.cpp.obj",
-			"ItemData.cpp.obj",
-			"MainCharacter.cpp.obj",
-			"MainMenuWidget.cpp.obj",
-			"PickupItem.cpp.obj",
-			"PlayerInteractorComponent.cpp.obj",
-			"PlayerStateBase.cpp.obj",
-			"PlayerStateMachineComponent.cpp.obj",
-			"WalletComponent.cpp.obj",
-			"Weapon.cpp.obj",
-			"ProjetUnreal.cpp.obj",
 			"CoinItem.gen.cpp.obj",
 			"Door.gen.cpp.obj",
 			"EnemyBase.gen.cpp.obj",
@@ -41,8 +23,26 @@
 			"WalletComponent.gen.cpp.obj",
 			"Weapon.gen.cpp.obj",
 			"PerModuleInline.gen.cpp.obj",
-			"InventorySlotWidget.cpp.obj",
-			"InventoryWidget.cpp.obj"
+			"CoinItem.cpp.obj",
+			"Door.cpp.obj",
+			"EnemyBase.cpp.obj",
+			"HealthComponent.cpp.obj",
+			"Interactable.cpp.obj",
+			"InteractableBase.cpp.obj",
+			"InventoryComponent.cpp.obj",
+			"InventoryTypes.cpp.obj",
+			"InventoryWidget.cpp.obj",
+			"ItemData.cpp.obj",
+			"MainCharacter.cpp.obj",
+			"MainMenuWidget.cpp.obj",
+			"PickupItem.cpp.obj",
+			"PlayerInteractorComponent.cpp.obj",
+			"PlayerStateBase.cpp.obj",
+			"PlayerStateMachineComponent.cpp.obj",
+			"WalletComponent.cpp.obj",
+			"Weapon.cpp.obj",
+			"ProjetUnreal.cpp.obj",
+			"InventorySlotWidget.cpp.obj"
 		]
 	}
 }
