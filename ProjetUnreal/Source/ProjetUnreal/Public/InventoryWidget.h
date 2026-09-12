@@ -7,6 +7,10 @@
 class UInventoryComponent;
 class UInventorySlotWidget;
 class UPanelWidget;
+class UItemDataAsset;
+class UImage;
+class UTextBlock;
+class UWidget;
 
 UCLASS()
 class PROJETUNREAL_API UInventoryWidget : public UUserWidget
@@ -21,12 +25,35 @@ public:
 	void RefreshGrid();
 
 protected:
+	virtual void NativeConstruct() override;
+
+	UFUNCTION()
+	void HandleSlotHovered(UItemDataAsset* ItemData);
+
+	UFUNCTION()
+	void HandleSlotUnhovered();
+
 	UPROPERTY(EditDefaultsOnly, Category = "Inventory UI")
 	TSubclassOf<UInventorySlotWidget> SlotWidgetClass;
 
-	// Conteneur UMG (WrapBox ou UniformGridPanel)
 	UPROPERTY(meta = (BindWidgetOptional))
 	TObjectPtr<UPanelWidget> SlotsContainer;
+
+	// Éléments du panneau d'informations
+	UPROPERTY(meta = (BindWidgetOptional))
+	TObjectPtr<UWidget> DetailsPanel;
+
+	UPROPERTY(meta = (BindWidgetOptional))
+	TObjectPtr<UImage> DetailIcon;
+
+	UPROPERTY(meta = (BindWidgetOptional))
+	TObjectPtr<UTextBlock> DetailName;
+
+	UPROPERTY(meta = (BindWidgetOptional))
+	TObjectPtr<UTextBlock> DetailType;
+
+	UPROPERTY(meta = (BindWidgetOptional))
+	TObjectPtr<UTextBlock> DetailDescription;
 
 private:
 	UPROPERTY()

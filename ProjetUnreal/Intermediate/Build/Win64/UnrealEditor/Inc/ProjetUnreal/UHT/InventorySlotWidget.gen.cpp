@@ -15,12 +15,85 @@ void EmptyLinkFunctionForGeneratedCodeInventorySlotWidget() {}
 // ********** Begin Cross Module References ********************************************************
 PROJETUNREAL_API UClass* Z_Construct_UClass_UInventorySlotWidget();
 PROJETUNREAL_API UClass* Z_Construct_UClass_UInventorySlotWidget_NoRegister();
+PROJETUNREAL_API UClass* Z_Construct_UClass_UItemDataAsset_NoRegister();
+PROJETUNREAL_API UFunction* Z_Construct_UDelegateFunction_ProjetUnreal_OnSlotHovered__DelegateSignature();
+PROJETUNREAL_API UFunction* Z_Construct_UDelegateFunction_ProjetUnreal_OnSlotUnhovered__DelegateSignature();
 PROJETUNREAL_API UScriptStruct* Z_Construct_UScriptStruct_FInventorySlot();
 UMG_API UClass* Z_Construct_UClass_UImage_NoRegister();
 UMG_API UClass* Z_Construct_UClass_UTextBlock_NoRegister();
 UMG_API UClass* Z_Construct_UClass_UUserWidget();
 UPackage* Z_Construct_UPackage__Script_ProjetUnreal();
 // ********** End Cross Module References **********************************************************
+
+// ********** Begin Delegate FOnSlotHovered ********************************************************
+struct Z_Construct_UDelegateFunction_ProjetUnreal_OnSlotHovered__DelegateSignature_Statics
+{
+	struct _Script_ProjetUnreal_eventOnSlotHovered_Parms
+	{
+		UItemDataAsset* ItemData;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/InventorySlotWidget.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_ItemData;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FDelegateFunctionParams FuncParams;
+};
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UDelegateFunction_ProjetUnreal_OnSlotHovered__DelegateSignature_Statics::NewProp_ItemData = { "ItemData", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(_Script_ProjetUnreal_eventOnSlotHovered_Parms, ItemData), Z_Construct_UClass_UItemDataAsset_NoRegister, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_ProjetUnreal_OnSlotHovered__DelegateSignature_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_ProjetUnreal_OnSlotHovered__DelegateSignature_Statics::NewProp_ItemData,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_ProjetUnreal_OnSlotHovered__DelegateSignature_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FDelegateFunctionParams Z_Construct_UDelegateFunction_ProjetUnreal_OnSlotHovered__DelegateSignature_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UPackage__Script_ProjetUnreal, nullptr, "OnSlotHovered__DelegateSignature", Z_Construct_UDelegateFunction_ProjetUnreal_OnSlotHovered__DelegateSignature_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_ProjetUnreal_OnSlotHovered__DelegateSignature_Statics::PropPointers), sizeof(Z_Construct_UDelegateFunction_ProjetUnreal_OnSlotHovered__DelegateSignature_Statics::_Script_ProjetUnreal_eventOnSlotHovered_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_ProjetUnreal_OnSlotHovered__DelegateSignature_Statics::Function_MetaDataParams), Z_Construct_UDelegateFunction_ProjetUnreal_OnSlotHovered__DelegateSignature_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UDelegateFunction_ProjetUnreal_OnSlotHovered__DelegateSignature_Statics::_Script_ProjetUnreal_eventOnSlotHovered_Parms) < MAX_uint16);
+UFunction* Z_Construct_UDelegateFunction_ProjetUnreal_OnSlotHovered__DelegateSignature()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUDelegateFunction(&ReturnFunction, Z_Construct_UDelegateFunction_ProjetUnreal_OnSlotHovered__DelegateSignature_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+void FOnSlotHovered_DelegateWrapper(const FMulticastScriptDelegate& OnSlotHovered, UItemDataAsset* ItemData)
+{
+	struct _Script_ProjetUnreal_eventOnSlotHovered_Parms
+	{
+		UItemDataAsset* ItemData;
+	};
+	_Script_ProjetUnreal_eventOnSlotHovered_Parms Parms;
+	Parms.ItemData=ItemData;
+	OnSlotHovered.ProcessMulticastDelegate<UObject>(&Parms);
+}
+// ********** End Delegate FOnSlotHovered **********************************************************
+
+// ********** Begin Delegate FOnSlotUnhovered ******************************************************
+struct Z_Construct_UDelegateFunction_ProjetUnreal_OnSlotUnhovered__DelegateSignature_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/InventorySlotWidget.h" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FDelegateFunctionParams FuncParams;
+};
+const UECodeGen_Private::FDelegateFunctionParams Z_Construct_UDelegateFunction_ProjetUnreal_OnSlotUnhovered__DelegateSignature_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UPackage__Script_ProjetUnreal, nullptr, "OnSlotUnhovered__DelegateSignature", nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00130000, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_ProjetUnreal_OnSlotUnhovered__DelegateSignature_Statics::Function_MetaDataParams), Z_Construct_UDelegateFunction_ProjetUnreal_OnSlotUnhovered__DelegateSignature_Statics::Function_MetaDataParams)},  };
+UFunction* Z_Construct_UDelegateFunction_ProjetUnreal_OnSlotUnhovered__DelegateSignature()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUDelegateFunction(&ReturnFunction, Z_Construct_UDelegateFunction_ProjetUnreal_OnSlotUnhovered__DelegateSignature_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+void FOnSlotUnhovered_DelegateWrapper(const FMulticastScriptDelegate& OnSlotUnhovered)
+{
+	OnSlotUnhovered.ProcessMulticastDelegate<UObject>(NULL);
+}
+// ********** End Delegate FOnSlotUnhovered ********************************************************
 
 // ********** Begin Class UInventorySlotWidget Function UpdateSlot *********************************
 struct InventorySlotWidget_eventUpdateSlot_Parms
@@ -128,25 +201,33 @@ struct Z_Construct_UClass_UInventorySlotWidget_Statics
 		{ "IncludePath", "InventorySlotWidget.h" },
 		{ "ModuleRelativePath", "Public/InventorySlotWidget.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OnSlotHovered_MetaData[] = {
+		{ "Category", "Inventory UI|Events" },
+		{ "ModuleRelativePath", "Public/InventorySlotWidget.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_OnSlotUnhovered_MetaData[] = {
+		{ "Category", "Inventory UI|Events" },
+		{ "ModuleRelativePath", "Public/InventorySlotWidget.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ItemIcon_MetaData[] = {
 		{ "BindWidgetOptional", "" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "// Nomme les composants exactement comme dans ton Designer UMG\n" },
-#endif
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/InventorySlotWidget.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Nomme les composants exactement comme dans ton Designer UMG" },
-#endif
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_QuantityText_MetaData[] = {
 		{ "BindWidgetOptional", "" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/InventorySlotWidget.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_CachedItemData_MetaData[] = {
+		{ "ModuleRelativePath", "Public/InventorySlotWidget.h" },
+	};
 #endif // WITH_METADATA
+	static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnSlotHovered;
+	static const UECodeGen_Private::FMulticastDelegatePropertyParams NewProp_OnSlotUnhovered;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_ItemIcon;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_QuantityText;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_CachedItemData;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FClassFunctionLinkInfo FuncInfo[] = {
@@ -158,11 +239,17 @@ struct Z_Construct_UClass_UInventorySlotWidget_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
+const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UInventorySlotWidget_Statics::NewProp_OnSlotHovered = { "OnSlotHovered", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UInventorySlotWidget, OnSlotHovered), Z_Construct_UDelegateFunction_ProjetUnreal_OnSlotHovered__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OnSlotHovered_MetaData), NewProp_OnSlotHovered_MetaData) }; // 3984935868
+const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UInventorySlotWidget_Statics::NewProp_OnSlotUnhovered = { "OnSlotUnhovered", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UInventorySlotWidget, OnSlotUnhovered), Z_Construct_UDelegateFunction_ProjetUnreal_OnSlotUnhovered__DelegateSignature, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OnSlotUnhovered_MetaData), NewProp_OnSlotUnhovered_MetaData) }; // 2913522528
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UInventorySlotWidget_Statics::NewProp_ItemIcon = { "ItemIcon", nullptr, (EPropertyFlags)0x0124080000080008, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UInventorySlotWidget, ItemIcon), Z_Construct_UClass_UImage_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ItemIcon_MetaData), NewProp_ItemIcon_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UInventorySlotWidget_Statics::NewProp_QuantityText = { "QuantityText", nullptr, (EPropertyFlags)0x0124080000080008, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UInventorySlotWidget, QuantityText), Z_Construct_UClass_UTextBlock_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_QuantityText_MetaData), NewProp_QuantityText_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UInventorySlotWidget_Statics::NewProp_CachedItemData = { "CachedItemData", nullptr, (EPropertyFlags)0x0144000000000000, UECodeGen_Private::EPropertyGenFlags::Object | UECodeGen_Private::EPropertyGenFlags::ObjectPtr, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UInventorySlotWidget, CachedItemData), Z_Construct_UClass_UItemDataAsset_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_CachedItemData_MetaData), NewProp_CachedItemData_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UInventorySlotWidget_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UInventorySlotWidget_Statics::NewProp_OnSlotHovered,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UInventorySlotWidget_Statics::NewProp_OnSlotUnhovered,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UInventorySlotWidget_Statics::NewProp_ItemIcon,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UInventorySlotWidget_Statics::NewProp_QuantityText,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UInventorySlotWidget_Statics::NewProp_CachedItemData,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UInventorySlotWidget_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_UInventorySlotWidget_Statics::DependentSingletons[])() = {
@@ -202,10 +289,10 @@ UInventorySlotWidget::~UInventorySlotWidget() {}
 struct Z_CompiledInDeferFile_FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_InventorySlotWidget_h__Script_ProjetUnreal_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UInventorySlotWidget, UInventorySlotWidget::StaticClass, TEXT("UInventorySlotWidget"), &Z_Registration_Info_UClass_UInventorySlotWidget, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UInventorySlotWidget), 150111642U) },
+		{ Z_Construct_UClass_UInventorySlotWidget, UInventorySlotWidget::StaticClass, TEXT("UInventorySlotWidget"), &Z_Registration_Info_UClass_UInventorySlotWidget, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UInventorySlotWidget), 475211722U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_InventorySlotWidget_h__Script_ProjetUnreal_4026426558(TEXT("/Script/ProjetUnreal"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_InventorySlotWidget_h__Script_ProjetUnreal_306641966(TEXT("/Script/ProjetUnreal"),
 	Z_CompiledInDeferFile_FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_InventorySlotWidget_h__Script_ProjetUnreal_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_prog_perso_C___Projet_PremierJeuUnreal_ProjetUnreal_Source_ProjetUnreal_Public_InventorySlotWidget_h__Script_ProjetUnreal_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

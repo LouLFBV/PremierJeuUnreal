@@ -2,6 +2,19 @@
 #include "InventoryComponent.h"
 #include "InventorySlotWidget.h"
 #include "Components/PanelWidget.h"
+#include "Components/Image.h"
+#include "Components/TextBlock.h"
+#include "ItemData.h"
+
+void UInventoryWidget::NativeConstruct()
+{
+	Super::NativeConstruct();
+
+	if (DetailsPanel)
+	{
+		DetailsPanel->SetVisibility(ESlateVisibility::Collapsed);
+	}
+}
 
 void UInventoryWidget::InitializeWidget(UInventoryComponent* InInventory)
 {
@@ -9,19 +22,18 @@ void UInventoryWidget::InitializeWidget(UInventoryComponent* InInventory)
 
 	TargetInventory = InInventory;
 
-	// Évite les doublons de binding
 	TargetInventory->OnInventoryUpdated.RemoveDynamic(this, &UInventoryWidget::RefreshGrid);
 	TargetInventory->OnInventoryUpdated.AddDynamic(this, &UInventoryWidget::RefreshGrid);
 
-	if (GEngine)
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("Inventory Widget Initialized"));
-	}
 	RefreshGrid();
 }
 
 void UInventoryWidget::RefreshGrid()
 {
+	if (GEngine)
+	{
+		UE_LOG(LogTemp, Log, TEXT("Refreshing Inventory Grid"));
+	}
 	if (!TargetInventory || !SlotsContainer || !SlotWidgetClass) return;
 
 	SlotsContainer->ClearChildren();
@@ -33,11 +45,60 @@ void UInventoryWidget::RefreshGrid()
 		UInventorySlotWidget* NewSlot = CreateWidget<UInventorySlotWidget>(this, SlotWidgetClass);
 		if (NewSlot)
 		{
-			// Sécurisation de l'accès à ItemData
-			FString ItemName = Slots[i].ItemData ? Slots[i].ItemData->GetName() : TEXT("Empty");
-
 			NewSlot->UpdateSlot(Slots[i]);
+
+			// Binding des événements de survol
+			NewSlot->OnSlotHovered.AddDynamic(this, &UInventoryWidget::HandleSlotHovered);
+			NewSlot->OnSlotUnhovered.AddDynamic(this, &UInventoryWidget::HandleSlotUnhovered);
+
 			SlotsContainer->AddChild(NewSlot);
 		}
+	}
+}
+
+void UInventoryWidget::HandleSlotHovered(UItemDataAsset* ItemData)
+{
+	if (!ItemData) return;
+
+	if (DetailName)
+	{
+		DetailName->SetText(ItemData->ItemData.Name);
+	}
+
+	if (DetailDescription)
+	{
+		DetailDescription->SetText(ItemData->ItemData.Description);
+	}
+
+	if (DetailType)
+	{
+		// Adapte la conversion du type/enum selon ton projet
+		DetailType->SetText(FText::FromString(TEXT("Objet")));
+	}
+
+	if (DetailIcon)
+	{
+		if (UTexture2D* IconTexture = ItemData->ItemData.Icon)
+		{
+			DetailIcon->SetBrushFromTexture(IconTexture);
+			DetailIcon->SetVisibility(ESlateVisibility::SelfHitTestInvisible);
+		}
+		else
+		{
+			DetailIcon->SetVisibility(ESlateVisibility::Collapsed);
+		}
+	}
+
+	if (DetailsPanel)
+	{
+		DetailsPanel->SetVisibility(ESlateVisibility::SelfHitTestInvisible);
+	}
+}
+
+void UInventoryWidget::HandleSlotUnhovered()
+{
+	if (DetailsPanel)
+	{
+		DetailsPanel->SetVisibility(ESlateVisibility::Collapsed);
 	}
 }

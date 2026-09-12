@@ -9,7 +9,6 @@
 			"Interactable.gen.cpp.obj",
 			"InteractableBase.gen.cpp.obj",
 			"InventoryComponent.gen.cpp.obj",
-			"InventorySlotWidget.gen.cpp.obj",
 			"InventoryTypes.gen.cpp.obj",
 			"InventoryWidget.gen.cpp.obj",
 			"ItemData.gen.cpp.obj",
@@ -19,7 +18,6 @@
 			"PlayerInteractorComponent.gen.cpp.obj",
 			"PlayerStateBase.gen.cpp.obj",
 			"PlayerStateMachineComponent.gen.cpp.obj",
-			"ProjetUnreal.init.gen.cpp.obj",
 			"WalletComponent.gen.cpp.obj",
 			"Weapon.gen.cpp.obj",
 			"PerModuleInline.gen.cpp.obj",
@@ -30,9 +28,7 @@
 			"Interactable.cpp.obj",
 			"InteractableBase.cpp.obj",
 			"InventoryComponent.cpp.obj",
-			"InventorySlotWidget.cpp.obj",
 			"InventoryTypes.cpp.obj",
-			"InventoryWidget.cpp.obj",
 			"ItemData.cpp.obj",
 			"MainCharacter.cpp.obj",
 			"MainMenuWidget.cpp.obj",
@@ -42,7 +38,11 @@
 			"PlayerStateMachineComponent.cpp.obj",
 			"WalletComponent.cpp.obj",
 			"Weapon.cpp.obj",
-			"ProjetUnreal.cpp.obj"
+			"ProjetUnreal.cpp.obj",
+			"InventorySlotWidget.gen.cpp.obj",
+			"ProjetUnreal.init.gen.cpp.obj",
+			"InventorySlotWidget.cpp.obj",
+			"InventoryWidget.cpp.obj"
 		]
 	}
 }

@@ -11,6 +11,8 @@ void EmptyLinkFunctionForGeneratedCodeProjetUnreal_init() {}
 	PROJETUNREAL_API UFunction* Z_Construct_UDelegateFunction_ProjetUnreal_OnDeathSignature__DelegateSignature();
 	PROJETUNREAL_API UFunction* Z_Construct_UDelegateFunction_ProjetUnreal_OnHealthChangedSignature__DelegateSignature();
 	PROJETUNREAL_API UFunction* Z_Construct_UDelegateFunction_ProjetUnreal_OnInventoryUpdated__DelegateSignature();
+	PROJETUNREAL_API UFunction* Z_Construct_UDelegateFunction_ProjetUnreal_OnSlotHovered__DelegateSignature();
+	PROJETUNREAL_API UFunction* Z_Construct_UDelegateFunction_ProjetUnreal_OnSlotUnhovered__DelegateSignature();
 	static FPackageRegistrationInfo Z_Registration_Info_UPackage__Script_ProjetUnreal;
 	FORCENOINLINE UPackage* Z_Construct_UPackage__Script_ProjetUnreal()
 	{
@@ -21,19 +23,21 @@ void EmptyLinkFunctionForGeneratedCodeProjetUnreal_init() {}
 				(UObject* (*)())Z_Construct_UDelegateFunction_ProjetUnreal_OnDeathSignature__DelegateSignature,
 				(UObject* (*)())Z_Construct_UDelegateFunction_ProjetUnreal_OnHealthChangedSignature__DelegateSignature,
 				(UObject* (*)())Z_Construct_UDelegateFunction_ProjetUnreal_OnInventoryUpdated__DelegateSignature,
+				(UObject* (*)())Z_Construct_UDelegateFunction_ProjetUnreal_OnSlotHovered__DelegateSignature,
+				(UObject* (*)())Z_Construct_UDelegateFunction_ProjetUnreal_OnSlotUnhovered__DelegateSignature,
 			};
 			static const UECodeGen_Private::FPackageParams PackageParams = {
 				"/Script/ProjetUnreal",
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0x6DE5AEB7,
-				0x1F6C0774,
+				0x9567B071,
+				0xFDB2E68C,
 				METADATA_PARAMS(0, nullptr)
 			};
 			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_ProjetUnreal.OuterSingleton, PackageParams);
 		}
 		return Z_Registration_Info_UPackage__Script_ProjetUnreal.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_ProjetUnreal(Z_Construct_UPackage__Script_ProjetUnreal, TEXT("/Script/ProjetUnreal"), Z_Registration_Info_UPackage__Script_ProjetUnreal, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x6DE5AEB7, 0x1F6C0774));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_ProjetUnreal(Z_Construct_UPackage__Script_ProjetUnreal, TEXT("/Script/ProjetUnreal"), Z_Registration_Info_UPackage__Script_ProjetUnreal, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x9567B071, 0xFDB2E68C));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
